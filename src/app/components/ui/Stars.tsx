@@ -2,7 +2,7 @@ import React from 'react'
 import {cn} from '../../util/cn'
 import clsx from 'clsx'
 
-const Stars = ({number, className}: {number?: number; className?: string}) => {
+const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimationOn: boolean; className?: string}) => {
   const stars = new Array(number || 100).fill(true)
   return (
     <>
@@ -18,7 +18,7 @@ const Stars = ({number, className}: {number?: number; className?: string}) => {
               height: `${size}px`,
               top: `${Math.random() * 100}vh`,
               left: `${Math.random() * 100}vw`,
-              animation: `dim ${animationDuration} infinite alternate`,
+              animation: isAnimationOn ? `dim ${animationDuration} infinite alternate` : 'none',
             }}
           ></span>
         )
