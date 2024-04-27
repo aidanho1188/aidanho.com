@@ -20,6 +20,17 @@ body {
   background: linear-gradient(to bottom, var(--start-color), var(--end-color));
 }
 
+footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 1rem;
+  
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
