@@ -26,8 +26,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/components/ui/Trees.js"  ],
+    "**/*.tsx", 
+    "src/app/components/ui/Trees.js", "src/app/components/Nav.tsx"  ],
   "exclude": [
     "node_modules"
   ]

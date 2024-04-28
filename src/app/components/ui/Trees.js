@@ -28,7 +28,7 @@ export default function Trees() {
 
   function drawGround() {
     ctx.fillStyle = `rgba(0, 0, 0, 1)`
-    ctx.fillRect(0, h - 80, w, h)
+    ctx.fillRect(0, h - 55, w, h)
   }
 
   function animationLoop() {
@@ -94,7 +94,7 @@ export default function Trees() {
     branchReset() {
       this.sx = this.x
       this.sy = this.y
-      this.length = this.radius * 20
+      this.length = this.radius * 21
       this.progress = 0
       this.branchChance = branchChance[7 - this.radius]
       this.branchCount = 0
@@ -104,7 +104,7 @@ export default function Trees() {
       if (this.progress > 1 || this.radius <= 0) return
       ctx.beginPath()
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(0, 0, 0, 0.5)`
+      ctx.fillStyle = `rgba(0, 0, 0, 0.7)`
       ctx.fill()
       ctx.closePath()
     }

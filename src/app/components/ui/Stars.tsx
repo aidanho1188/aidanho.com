@@ -7,7 +7,7 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
   return (
     <>
       {stars.map((el, idx) => {
-        const size = Math.random() * 2 + 0.5
+        const size = Math.random() * 4 + 0.5
         const animationDuration = `${Math.random() * 3 + 1}s`
         return (
           <span
@@ -18,7 +18,7 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
               height: `${size}px`,
               top: `${Math.random() * 100}vh`,
               left: `${Math.random() * 100}vw`,
-              animation: isAnimationOn ? `dim ${animationDuration} infinite alternate` : 'none',
+              animation: isAnimationOn && size > 4 ? `dim ${animationDuration} infinite alternate` : 'none',
             }}
           ></span>
         )
@@ -29,7 +29,7 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
             opacity: 1;
           }
           50% {
-            opacity: 0.5;
+            opacity: 0.2;
           }
           100% {
             opacity: 1;
