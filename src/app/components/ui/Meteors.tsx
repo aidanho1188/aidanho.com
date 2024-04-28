@@ -19,7 +19,7 @@ const Meteors = ({number, isAnimationOn, className}: {number?: number; isAnimati
           )}
           style={{
             top: -5,
-            left: Math.floor(Math.random() * 150 - 20) + 'vw',
+            left: Math.floor(Math.random() * 200 - 20) + 'vw',
             animationDelay: Math.floor(Math.random() * 20 + 2) + 's',
             animationDuration: Math.floor(Math.random() * (10 - 5) + 10) + 's',
           }}

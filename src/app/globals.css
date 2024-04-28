@@ -22,13 +22,13 @@ body {
 
 footer {
   display: flex;
-  position: relative;
+  position: sticky;
+  bottom: 0;
   justify-content: center;
   align-items: center;
   background: black;
   color: white;
   padding: 1rem;
-  
 }
 
 @layer utilities {
