@@ -2,22 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --start-color: #0a1020;
-  --end-color: #8f0088;
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-color: #0a1020;
+    --background-end-color: #8f0088;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-color: #0a1020;
+    --background-end-color: #8f0088;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, var(--start-color), var(--end-color));
+  background: linear-gradient(to bottom, var(--background-start-color), var(--background-end-color));
 }
 
 footer {

@@ -6,16 +6,18 @@ import {on} from 'events'
 import {title} from 'process'
 import {Interface} from 'readline'
 import page from '../page'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faMagic, faPause, fa0, faMagicWandSparkles} from '@fortawesome/free-solid-svg-icons'
 
-export default function NavMenu() {
+export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   return (
     <div className='relative w-full flex items-center justify-center'>
-      <Navbar className='top-0 ' />
+      <Navbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
     </div>
   )
 }
 
-function Navbar({className}: {className?: string}) {
+function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   const [active, setActive] = useState<string | null>(null)
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50', className)}>
@@ -44,6 +46,9 @@ function Navbar({className}: {className?: string}) {
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
         </MenuItem>
+        <button className='px-1 rounded-full bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200' onClick={() => setAnimationOn(!isAnimationOn)}>
+          <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
+        </button>
       </Menu>
     </div>
   )
