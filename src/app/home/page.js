@@ -10,6 +10,7 @@ import './style.css'
 export default function Home() {
   const [isAnimationOn, setAnimationOn] = React.useState(true)
 
+  
   return (
     <main className='flex min-h-screen flex-col items-center justify-start w-full p-24'>
       <Meteors number={10} isAnimationOn={isAnimationOn} />

@@ -1,13 +1,9 @@
 'use client'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {HoveredLink, Menu, MenuItem, ProductItem} from './ui/navbar-menu'
 import {cn} from '../util/cn'
-import {on} from 'events'
-import {title} from 'process'
-import {Interface} from 'readline'
-import page from '../page'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faMagic, faPause, fa0, faMagicWandSparkles} from '@fortawesome/free-solid-svg-icons'
+import {faMagic, faMagicWandSparkles, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 
 export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   return (
@@ -19,11 +15,22 @@ export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn
 
 function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   const [active, setActive] = useState<string | null>(null)
+  const [darkMode, setDarkMode] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode')
+      document.body.classList.remove('light-mode')
+    } else {
+      document.body.classList.add('light-mode')
+      document.body.classList.remove('dark-mode')
+    }
+  }, [darkMode])
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50', className)}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item='Home'>
-          <div className='flex flex-col space-y-4 text-sm'>
+          <div className='flex flex-col space-y-4 text-sm '>
             <HoveredLink href='/web-dev'>Web Development</HoveredLink>
             <HoveredLink href='/interface-design'>Interface Design</HoveredLink>
             <HoveredLink href='/seo'>Search Engine Optimization</HoveredLink>
@@ -46,8 +53,11 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
         </MenuItem>
-        <button className='px-1 rounded-full bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200' onClick={() => setAnimationOn(!isAnimationOn)}>
+        <button className='px-1 rounded-full bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200 text-ui-text' onClick={() => setAnimationOn(!isAnimationOn)}>
           <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
+        </button>
+        <button className='px-1 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={() => setDarkMode(!darkMode)}>
+          <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
         </button>
       </Menu>
     </div>
