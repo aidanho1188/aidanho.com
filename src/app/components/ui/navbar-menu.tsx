@@ -15,8 +15,8 @@ const transition = {
 
 export const MenuItem = ({setActive, active, item, children}: {setActive: (item: string) => void; active: string | null; item: string; children?: React.ReactNode}) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className='relative '>
-      <motion.p transition={{duration: 0.3}} className='cursor-pointer text-black hover:opacity-[0.9] dark:text-white'>
+    <div onMouseEnter={() => setActive(item)} className='relative'>
+      <motion.p transition={{duration: 0.3}} className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
         {item}
       </motion.p>
       {active !== null && (
@@ -26,7 +26,7 @@ export const MenuItem = ({setActive, active, item, children}: {setActive: (item:
               <motion.div
                 transition={transition}
                 layoutId='active' // layoutId ensures smooth animation
-                className='bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl'
+                className='bg-ui-background-wo backdrop-blur-sm rounded-2xl overflow-hidden border border-ui-background shadow-xl'
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -47,7 +47,7 @@ export const Menu = ({setActive, children}: {setActive: (item: string | null) =>
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className='relative border-b dark:bg-black/[0.6] bg-white/[0.5] backdrop-blur-sm border-neutral-200 dark:border-white/[0.1] border-black/[0.1] shadow-input flex justify-end space-x-4 px-8 py-6 '
+      className='relative bg-ui-background backdrop-blur-sm border-neutral-200 border-ui-border shadow-input flex justify-end space-x-4 px-8 py-6'
     >
       {children}
     </nav>
@@ -59,8 +59,8 @@ export const ProductItem = ({title, description, href, src}: {title: string; des
     <Link href={href} className='flex space-x-2'>
       <Image src={src} width={140} height={70} alt={title} className='flex-shrink-0 rounded-md shadow-2xl' />
       <div>
-        <h4 className='text-xl font-bold mb-1 text-black dark:text-white'>{title}</h4>
-        <p className='text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300'>{description}</p>
+        <h4 className='text-xl font-bold mb-1 text-ui-text'>{title}</h4>
+        <p className='ui-neutral text-sm max-w-[10rem]'>{description}</p>
       </div>
     </Link>
   )
@@ -68,7 +68,7 @@ export const ProductItem = ({title, description, href, src}: {title: string; des
 
 export const HoveredLink = ({children, ...rest}: any) => {
   return (
-    <Link {...rest} className='text-neutral-700 dark:text-neutral-200 hover:text-black '>
+    <Link {...rest} className='ui-neutral text-ui-text hover:text-gray-500'>
       {children}
     </Link>
   )

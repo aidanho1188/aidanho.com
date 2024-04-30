@@ -3,6 +3,13 @@ module.exports = {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      colors: {
+        'ui-background-wo': 'var(--ui-background-color)',
+        'ui-background': 'var(--ui-background-color-opacity)',
+        'ui-text': 'var(--ui-text-color)',
+        'ui-border': 'var(--ui-border-color)',
+        'ui-neutral': 'var(--ui-text-neutral)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
