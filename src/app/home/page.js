@@ -4,9 +4,7 @@ import Meteors from '../components/ui/Meteors'
 import Stars from '../components/ui/Stars'
 import Trees from '../components/ui/Trees.js'
 import NavMenu from '../components/Nav'
-// import {calsans} from '@/fonts/calsans'
 import Image from 'next/image'
-// import {twMerge} from 'tailwind-merge'
 
 import './style.css'
 
