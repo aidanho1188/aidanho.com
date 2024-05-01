@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {cn} from '../../util/cn'
 import clsx from 'clsx'
 
 const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimationOn: boolean; className?: string}) => {
   const stars = new Array(number || 100).fill(true)
+
   return (
     <>
       {stars.map((el, idx) => {
@@ -12,13 +13,13 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
         return (
           <span
             key={'star' + idx}
-            className={cn('fixed rounded-full bg-white', className)}
+            className={cn('z-0 fixed rounded-full bg-white', className)}
             style={{
               width: `${size}px`,
               height: `${size}px`,
               top: `${Math.random() * 100}vh`,
               left: `${Math.random() * 100}vw`,
-              animation: isAnimationOn && size > 4 ? `dim ${animationDuration} infinite alternate` : 'none',
+              animation: isAnimationOn ? `dim ${animationDuration} infinite alternate` : 'none',
             }}
           ></span>
         )
