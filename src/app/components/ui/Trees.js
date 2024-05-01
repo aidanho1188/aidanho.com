@@ -14,8 +14,8 @@ export default function Trees() {
     animationLoop()
   }
 
-  function addTree(e) {
-    trees.push(new Tree(e.x))
+  function addTree(x, y, l, h) {
+    trees.push(new Tree(x, y, l, h))
   }
 
   function resizeReset() {
@@ -23,7 +23,6 @@ export default function Trees() {
     h = canvas.height = window.innerHeight
     trees = []
     drawGround()
-    trees.push(new Tree())
   }
 
   function drawGround() {
@@ -48,11 +47,11 @@ export default function Trees() {
   }
 
   class Tree {
-    constructor(x) {
-      this.x = x ? x : w * 0.5
-      this.y = h - 50
+    constructor(x = window.innerWidth * 0.5, y = window.innerHeight - 50, l = 7, h = 7) {
+      this.x = x
+      this.y = y
       this.branchs = []
-      this.addBranch(this.x, this.y, getRandomInt(5, 7), 180)
+      this.addBranch(this.x, this.y, getRandomInt(l, h), 180)
     }
     addBranch(x, y, radius, angle) {
       this.branchs.push(new Branch(x, y, radius, angle))
@@ -129,6 +128,39 @@ export default function Trees() {
 
   useEffect(() => {
     init()
+    addTree()
+    let addedTrees = false
+
+    const onScroll = () => {
+      let documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight)
+      let scrollableHeight = documentHeight - window.innerHeight
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      let scrollPercent = Math.floor((scrollTop / scrollableHeight) * 100)
+
+      if (scrollPercent % 50 === 0 && !addedTrees) {
+        let x1 = Math.random() * (window.innerWidth * 0.33)
+        let x2 = Math.random() * (window.innerWidth * 0.33) + window.innerWidth * 0.33
+        let x3 = Math.random() * (window.innerWidth * 0.33) + window.innerWidth * 0.66
+
+        addTree(x1, window.innerHeight - 50, 4, 6)
+        addTree(x2, window.innerHeight - 50, 4, 6)
+        addTree(x3, window.innerHeight - 50, 4, 6)
+
+        addedTrees = true
+      } else if (scrollPercent % 50 !== 0) {
+        addedTrees = false
+      }
+
+      if (scrollPercent >= 100) {
+        window.removeEventListener('scroll', onScroll)
+      }
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   return (
