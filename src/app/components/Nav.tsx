@@ -4,6 +4,7 @@ import {HoveredLink, Menu, MenuItem, ProductItem} from './ui/navbar-menu'
 import {cn} from '../util/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMagic, faMagicWandSparkles, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
 export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   return (
@@ -26,17 +27,21 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
       document.body.classList.remove('dark-mode')
     }
   }, [darkMode])
+
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50', className)}>
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item='Home'>
+        <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          Home
+        </Link>
+        {/* <MenuItem setActive={setActive} active={active} item='Home'>
           <div className='flex flex-col space-y-4 text-sm '>
             <HoveredLink href='/web-dev'>Web Development</HoveredLink>
             <HoveredLink href='/interface-design'>Interface Design</HoveredLink>
             <HoveredLink href='/seo'>Search Engine Optimization</HoveredLink>
             <HoveredLink href='/branding'>Branding</HoveredLink>
           </div>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem setActive={setActive} active={active} item='About'>
           {/* <div className='  text-sm grid grid-cols-2 gap-10 p-4'>
             <ProductItem title='Algochurn' href='https://algochurn.com' src='https://assets.aceternity.com/demos/algochurn.webp' description='Prepare for tech interviews like never before.' />

@@ -11,9 +11,9 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
         const size = Math.random() * 4 + 0.5
         const animationDuration = `${Math.random() * 3 + 1}s`
         return (
-          <div
+          <span
             key={'star' + idx}
-            className={cn('fixed rounded-full bg-white', className)}
+            className={cn('z-0 fixed rounded-full bg-white', className)}
             style={{
               width: `${size}px`,
               height: `${size}px`,
@@ -21,7 +21,7 @@ const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimation
               left: `${Math.random() * 100}vw`,
               animation: isAnimationOn ? `dim ${animationDuration} infinite alternate` : 'none',
             }}
-          ></div>
+          ></span>
         )
       })}
       <style jsx global>{`
