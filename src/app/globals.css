@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .light-mode {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-color: #0225c4;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-color: #55a0cc;
   --background-end-color: #fababa;
-  --ui-background-color: rgb(255, 194, 194);
-  --ui-background-color-opacity: rgb(255, 194, 194, 0.8);
+  --ui-background-color: rgb(194, 194, 194);
+  --ui-background-color-opacity: rgba(194, 194, 194, 0.8);
   --ui-text-color: black;
   --ui-border-color: rgb(255, 255, 255, 0.1);
   --ui-text-neutral: 700;
-  --bg-color: rgb(255, 229, 229);
+  --bg-color: rgb(255, 255, 255);
 }
 
 .dark-mode {

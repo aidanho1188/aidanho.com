@@ -16,15 +16,26 @@ export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn
 
 function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   const [active, setActive] = useState<string | null>(null)
-  const [darkMode, setDarkMode] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = window.localStorage.getItem('darkMode')
+      if (savedMode) {
+        return JSON.parse(savedMode)
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+    return false
+  })
 
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add('dark-mode')
       document.body.classList.remove('light-mode')
+      window.localStorage.setItem('darkMode', JSON.stringify(darkMode))
     } else {
       document.body.classList.add('light-mode')
       document.body.classList.remove('dark-mode')
+      window.localStorage.setItem('darkMode', JSON.stringify(false))
     }
   }, [darkMode])
 
