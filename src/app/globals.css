@@ -6,11 +6,12 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-color: #0225c4;
   --background-end-color: #fababa;
-  --ui-background-color: rgb(255, 210, 210);
-  --ui-background-color-opacity: rgb(255, 210, 210, 0.8);
+  --ui-background-color: rgb(255, 194, 194);
+  --ui-background-color-opacity: rgb(255, 194, 194, 0.8);
   --ui-text-color: black;
-  --ui-border-color: (255, 255, 255, 0.1);
+  --ui-border-color: rgb(255, 255, 255, 0.1);
   --ui-text-neutral: 700;
+  --bg-color: rgb(255, 229, 229);
 }
 
 .dark-mode {
@@ -20,23 +21,24 @@
   --ui-background-color: rgb(0, 0, 0);
   --ui-background-color-opacity: rgb(0, 0, 0, 0.8);
   --ui-text-color: white;
-  --ui-border-color: (0, 0, 0, 0.1);
+  --ui-border-color: rgb(0, 0, 0, 0.1);
   --ui-text-neutral: 300;
+  --bg-color: rgb(0, 3, 34);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, var(--background-start-color), var(--background-end-color));
+  /* background: linear-gradient(to bottom, var(--background-start-color), var(--background-end-color)); */
 }
 
 footer {
   display: flex;
-  position: sticky;
+  position: relative;
   bottom: 0;
   justify-content: center;
   align-items: center;
-  background: black;
-  color: white;
+  background: var(--ui-background-color);
+  color: rgb(var(--foreground-rgb));
   padding: 1rem;
 }
 
