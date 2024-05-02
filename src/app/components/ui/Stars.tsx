@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {cn} from '../../util/cn'
+import {cn} from '../../utils/cn'
 import clsx from 'clsx'
 
 const Stars = ({number, isAnimationOn, className}: {number?: number; isAnimationOn: boolean; className?: string}) => {

@@ -1,7 +1,7 @@
 'use client'
 import React, {useState, useEffect} from 'react'
 import {HoveredLink, Menu, MenuItem, ProductItem} from './ui/navbar-menu'
-import {cn} from '../util/cn'
+import {cn} from '../utils/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMagic, faMagicWandSparkles, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
