@@ -1,15 +1,65 @@
 'use client'
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import useOnClickOutside from 'use-onclickoutside' // you might need to install this package
 import {HoveredLink, Menu, MenuItem, ProductItem} from './ui/navbar-menu'
 import {cn} from '../utils/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faMagic, faMagicWandSparkles, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
+import {faNavicon, faMagic, faMagicWandSparkles, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
 export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   return (
     <div className='relative w-full flex items-center justify-center'>
-      <Navbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+      <div className='block sm:hidden'>
+        <MobileNavbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+      </div>
+      <div className='hidden sm:block'>
+        <Navbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+      </div>
+    </div>
+  )
+}
+
+function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
+  const [navOpen, setNavOpen] = useState(false)
+  const navRef = useRef(null)
+
+  const toggleNav = () => {
+    setNavOpen(!navOpen)
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setNavOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  return (
+    <div ref={navRef} className={cn('fixed top-0 left-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
+      <FontAwesomeIcon icon={faNavicon} size='xl' onClick={toggleNav} />
+      {navOpen && (
+        <div className='flex flex-col space-y-4 text-sm bg-ui-background p-4 mt-4 border rounded text-ui-text border-neutral-500/[0.2]'>
+          <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+            Home
+          </Link>
+          <Link href='/about' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+            About
+          </Link>
+          <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+            Arts
+          </Link>
+          <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+            Contact
+          </Link>
+        </div>
+      )}
     </div>
   )
 }
