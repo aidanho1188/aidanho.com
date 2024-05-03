@@ -1,6 +1,5 @@
 'use client'
 import React, {useState, useEffect, useRef} from 'react'
-import useOnClickOutside from 'use-onclickoutside' // you might need to install this package
 import {HoveredLink, Menu, MenuItem, ProductItem} from './ui/navbar-menu'
 import {cn} from '../utils/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
