@@ -1,4 +1,4 @@
-import {cn} from '../../util/cn'
+import {cn} from '../../utils/cn'
 import clsx from 'clsx'
 import React from 'react'
 
