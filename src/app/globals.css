@@ -28,12 +28,18 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(to bottom, var(--background-start-color), var(--background-end-color)); */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 footer {
   display: flex;
   position: relative;
+  margin-top: auto;
   bottom: 0;
   justify-content: center;
   align-items: center;

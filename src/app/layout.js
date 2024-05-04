@@ -8,14 +8,9 @@ export const metadata = {
 }
 
 export default function RootLayout({children}) {
-  const currentYear = new Date().getFullYear()
-
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        {children}
-        <footer> Built with Next.js and Vercel. © {currentYear} Aidan Ho. All rights reserved.</footer>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

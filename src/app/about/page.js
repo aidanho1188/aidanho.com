@@ -8,6 +8,7 @@ export default function About() {
     <main>
       <NavMenu />
       <StickyScroll content={content} />
+      <footer> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
     </main>
   )
 }
