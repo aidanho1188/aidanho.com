@@ -42,19 +42,19 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   return (
     <div ref={navRef} className={cn('fixed top-0 left-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
-      <FontAwesomeIcon icon={faNavicon} size='xl' onClick={toggleNav} />
+      <FontAwesomeIcon icon={faNavicon} size='xl' className='x-2 rounded-sm bg-transparent text-neutral-200 transition duration-200 text-gray-400' onClick={toggleNav} />
       {navOpen && (
         <div className='flex flex-col space-y-4 text-sm bg-ui-background p-4 mt-4 border rounded text-ui-text border-neutral-500/[0.2]'>
-          <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Home
           </Link>
-          <Link href='/about' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <Link href='/about' className='cursor-pointer text-ui-text hover:opacity-[0.5]'>
             About
           </Link>
-          <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Arts
           </Link>
-          <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Contact
           </Link>
         </div>
