@@ -9,19 +9,21 @@ import Image from 'next/image'
 import './style.css'
 
 export default function Arts() {
+  const currentYear = new Date().getFullYear()
   const [isAnimationOn, setAnimationOn] = React.useState(true)
 
   return (
-    <main className='bg-art-background flex min-h-screen flex-col items-center justify-start w-full p-24'>
+    <main className='h-full w-full bg-art-background flex min-h-screen flex-col items-center justify-start'>
       <Meteors number={10} isAnimationOn={isAnimationOn} />
       <Stars number={400} isAnimationOn={false} />
       <Stars number={100} isAnimationOn={isAnimationOn} />
       <Trees />
 
       <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
-      <div className='banner' style={{position: 'relative', top: 0, left: 0, width: '100%', height: '90vh', zIndex: 1000}}></div>
+      {/* banner */}
+      <div className='relative top-0 left-0 w-[100%] h-[90vh] z-50' />
 
-      <div className='bg-ui-background rounded w-full mx-auto antialiased px-4 pt-4 relative'>
+      <div className='bg-ui-background rounded w-auto antialiased px-12 pt-4 relative m-6'>
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className='mb-10 px-2 w-full text-ui-text'>
             <h2 className='bg-ui-background  rounded-full text-sm w-fit px-4 py-1 mb-4'>{item.badge}</h2>
@@ -35,6 +37,7 @@ export default function Arts() {
           </div>
         ))}
       </div>
+      <footer className='w-full bottom-0'> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
     </main>
   )
 }
