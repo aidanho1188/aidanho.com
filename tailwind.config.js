@@ -15,7 +15,7 @@ module.exports = {
         'ui-background-wo': 'var(--ui-background-color)',
         'ui-background': 'var(--ui-background-color-opacity)',
         'ui-text': 'var(--ui-text-color)',
-        'ui-border': 'var(--ui-border-color)',
+        'ui-borderui-border': 'var(--ui-border-color)',
         'ui-neutral': 'var(--ui-text-neutral)',
         'background-color': 'var(--bg-color)',
       },
@@ -24,6 +24,7 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'art-background': 'linear-gradient(to bottom, var(--background-start-color), var(--background-end-color));',
       },
+      scrollbar: ['dark'],
       animation: {
         'meteor-effect': 'meteor 5s linear infinite',
         shimmer: 'shimmer 2s linear infinite',
@@ -48,7 +49,12 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors, addColorForGrid],
+  plugins: [addVariablesForColors, addColorForGrid, hideScrollbar],
+  variants: {
+    extend: {
+      scrollbar: ['rounded'],
+    },
+  },
 }
 
 function addVariablesForColors({addBase, theme}: any) {
@@ -75,4 +81,17 @@ function addColorForGrid({matchUtilities, theme}: any) {
     },
     {values: flattenColorPalette(theme('backgroundColor')), type: 'color'},
   )
+}
+
+function hideScrollbar({addUtilities}) {
+  const newUtilities = {
+    '.scrollbar-hide': {
+      'scrollbar-width': 'none',
+      '-ms-overflow-style': 'none',
+    },
+    '.scrollbar-hide::-webkit-scrollbar': {
+      display: 'none',
+    },
+  }
+  addUtilities(newUtilities)
 }
