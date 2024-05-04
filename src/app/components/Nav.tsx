@@ -73,14 +73,14 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
       }
       return window.matchMedia('(prefers-color-scheme: dark)').matches
     }
-    return false
+    return true
   })
 
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add('dark-mode')
       document.body.classList.remove('light-mode')
-      window.localStorage.setItem('darkMode', JSON.stringify(darkMode))
+      window.localStorage.setItem('darkMode', JSON.stringify(true))
     } else {
       document.body.classList.add('light-mode')
       document.body.classList.remove('dark-mode')
