@@ -21,7 +21,7 @@ export default function Arts() {
 
       <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
       {/* banner */}
-      <div className='relative top-0 left-0 w-[100%] h-[90vh] z-50' />
+      <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       <div className='bg-ui-background rounded w-auto antialiased px-12 pt-4 relative m-6'>
         {dummyContent.map((item, index) => (
