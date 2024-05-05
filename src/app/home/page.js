@@ -10,9 +10,9 @@ export default function Home() {
     <main>
       <NavMenu />
       <Background>
-        <div className='flex flex-col sm:flex-row w-[100vw] items-center m-6'>
-          <p className='text-4xl font-bold z-20 text-ui-text px-8 py-8 w-[50vw] sm:w-[100vw] '>This is a wise quote!</p>
-          <div className='h-[20rem] w-[50vw] sm:w-[100vw] flex items-center justify-center'>
+        <div className='h-screen w-full flex flex-col sm:flex-row items-center m-6'>
+          <p className='italic text-center border-l-4 border-gray-500 pl-4 my-8 text-lg sm:text-xl font-semibold z-20 text-ui-text px-8 py-8 sm:w-[100vw] flex justify-center'>{quote.text}</p>
+          <div className='h-[20rem] sm:w-[100vw] flex items-center justify-center'>
             <CardStack items={CARDS} />
           </div>
         </div>
@@ -20,6 +20,10 @@ export default function Home() {
       <footer> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
     </main>
   )
+}
+
+const quote = {
+  text: 'Welcome to my website! I am a software developer with a passion for creating and learning. I am always looking for new opportunities to learn and grow. Feel free to check out my projects!',
 }
 
 const CARDS = [

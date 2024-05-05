@@ -58,6 +58,9 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
           <Link href='/arts' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Arts
           </Link>
+          <Link href='/portfolio' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            Portfolio
+          </Link>
           <Link href='/projects' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Projects
           </Link>
@@ -106,6 +109,9 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
         </Link>
         <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
           Arts
+        </Link>
+        <Link href='/portfolio' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          Portfolio
         </Link>
         <MenuItem setActive={setActive} active={active} item='Projects'>
           <div className='flex flex-col space-y-4 text-sm'>

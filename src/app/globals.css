@@ -41,8 +41,9 @@ body {
 
 main {
   display: flex;
+  position: relative;
   flex-direction: column;
-  height: 100vh;
+  height: 100svh;
 }
 
 footer {
