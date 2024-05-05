@@ -44,30 +44,28 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
   return (
     <div ref={navRef} className={cn('fixed top-0 right-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
       <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} />
-      {navOpen && (
-        <div className='fixed top-0 left-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background text-ui-text'>
-          <div className='flex justify-end'>
-            <FontAwesomeIcon icon={faX} size='xl' className='p-4 mt-2 mr-[1.08rem] rounded-sm bg-transparent text-gray-400 cursor-pointer' onClick={toggleNav} />
-          </div>
-          <nav className='fixed mt-8 w-full h-full flex flex-col overflow-auto scrollbar-hide'>
-            <Link href='/home' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
-              Home
-            </Link>
-            <Link href='/about' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
-              About
-            </Link>
-            <Link href='/arts' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
-              Arts
-            </Link>
-            <Link href='/projects' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
-              Projects
-            </Link>
-            <Link href='/contact' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
-              Contact
-            </Link>
-          </nav>
+      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
+        <div className='flex justify-end'>
+          <FontAwesomeIcon icon={faX} size='xl' className='p-4 mt-2 mr-[1.08rem] rounded-sm bg-transparent text-gray-400 cursor-pointer' onClick={toggleNav} />
         </div>
-      )}
+        <nav className='fixed mt-8 w-full h-full flex flex-col overflow-auto scrollbar-hide'>
+          <Link href='/home' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            Home
+          </Link>
+          <Link href='/about' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            About
+          </Link>
+          <Link href='/arts' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            Arts
+          </Link>
+          <Link href='/projects' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            Projects
+          </Link>
+          <Link href='/contact' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+            Contact
+          </Link>
+        </nav>
+      </div>
     </div>
   )
 }

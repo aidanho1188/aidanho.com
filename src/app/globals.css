@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .slide-in {
+    @apply transform translate-x-full transition-transform ease-in-out duration-300;
+  }
+  .slide-out {
+    @apply transform translate-x-0 transition-transform ease-in-out duration-300;
+  }
+}
+
 .light-mode {
   --foreground-rgb: 0, 0, 0;
   --background-start-color: #55a0cc;
