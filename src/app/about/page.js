@@ -15,33 +15,33 @@ export default function About() {
 
 const content = [
   {
-    title: 'Collaborative Editing',
-    description: 'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Collaborative Editing</div>,
+    title: 'Introduction',
+    description: "A detailed introduction about who you are, what you do, and what you're passionate about in software development.",
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of me</div>,
   },
   {
-    title: 'Real time changes',
-    description: 'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Version control</div>,
+    title: 'Background',
+    description: 'Talk about how you got into software development. This could include your education, self-learning journey, or any other experiences that led you to this career.',
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Picture of location</div>,
   },
   {
-    title: 'Version control',
-    description: "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Version control</div>,
+    title: 'Skills and Expertise',
+    description: 'A detailed list of your technical skills and areas of expertise. You could talk about your proficiency in different programming languages, your experience with different frameworks and technologies, and any special areas of knowledge or interest.',
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Picture of skills/programming language</div>,
   },
   {
-    title: 'Running out of content',
-    description: "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Running out of content</div>,
+    title: 'Work Experience',
+    description: 'Detailed descriptions of your past roles, the projects you worked on, and the impact you made. This could be similar to the work experience section on a resume, but with more emphasis on the story and the results.',
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of real life project</div>,
   },
   {
-    title: 'Running out of content',
-    description: "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Running out of content</div>,
+    title: 'Projects',
+    description: "Detailed case studies of a few key projects that you're particularly proud of. For each project, talk about the problem you were solving, the approach you took, the technologies you used, and the results you achieved.",
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of best project</div>,
   },
   {
-    title: 'Running out of content',
-    description: "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Running out of content</div>,
+    title: 'Personal Interests',
+    description: 'A section about your personal interests outside of work. This helps to show your personality and make a personal connection with the reader.',
+    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture personal interests</div>,
   },
 ]
