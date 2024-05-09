@@ -1,0 +1,46 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.hero-left {
+  font-style: italic;
+  width: 50%;
+  text-align: center;
+  padding-left: 1rem;
+  margin: 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ui-text);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right {
+  height: 20rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  border-left-width: 4px;
+  border-color: #6b7280;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+}
