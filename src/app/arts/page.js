@@ -1,5 +1,6 @@
 'use client'
 import React, {useEffect} from 'react'
+import Footer from '../components/Footer'
 import Meteors from '../components/ui/Meteors'
 import Stars from '../components/ui/Stars'
 import Trees from '../components/ui/Trees'
@@ -20,7 +21,6 @@ export default function Arts() {
       <Trees />
 
       <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
-      {/* banner */}
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       <div className='bg-ui-background rounded w-auto antialiased px-12 pt-4 relative m-6'>
@@ -37,7 +37,7 @@ export default function Arts() {
           </div>
         ))}
       </div>
-      <footer className='w-full bottom-0'> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
+      <Footer />
     </main>
   )
 }

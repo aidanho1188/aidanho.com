@@ -1,6 +1,7 @@
 import CardStack from '../../components/ui/card-stack'
 import styles from '../styles/HeroSection.module.css'
-export default function HeroSection({data}) {
+
+export default function HeroSection({data, children}) {
   return (
     <div className={styles.container}>
       <div className={styles['hero-left']}>
@@ -10,6 +11,7 @@ export default function HeroSection({data}) {
       <div className={styles['hero-right']}>
         <CardStack items={data.highlightProjects} />
       </div>
+      {children}
     </div>
   )
 }
