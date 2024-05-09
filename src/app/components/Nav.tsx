@@ -10,10 +10,10 @@ import './styles/nav.css'
 export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   return (
     <div className='relative w-full flex items-center justify-center'>
-      <div className='block sm:hidden'>
+      <div className='block md:hidden'>
         <MobileNavbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
       </div>
-      <div className='hidden sm:block'>
+      <div className='hidden md:block'>
         <Navbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
       </div>
     </div>

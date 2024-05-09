@@ -43,7 +43,7 @@ main {
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 100svh;
+  height: 100vh;
 }
 
 footer {

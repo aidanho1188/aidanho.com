@@ -14,20 +14,18 @@ export default function Home() {
   return (
     <main>
       <NavMenu />
-      <Background>
-        <div className='flex flex-col overflow-y-hidden z-20'>
-          <HeroSection data={data} />
+      <Background />
+      <div className='h-inherit flex flex-col z-10'>
+        <HeroSection data={data} />
 
-          {/* 
-          <ContactForm data={data} /> */}
-          <div className='bg-ui-background-wo flex flex-col items-center justify-center'>
-            <Skills data={data} />
-            <Experiences data={data} />
-            <Educations data={data} />
-            <Projects data={data} />
-          </div>
+        {/* <ContactForm data={data} /> */}
+        <div className='bg-ui-background-wo flex flex-col items-center justify-center'>
+          <Skills data={data} />
+          <Experiences data={data} />
+          <Educations data={data} />
+          <Projects data={data} />
         </div>
-      </Background>
+      </div>
       <Footer />
     </main>
   )

@@ -1,6 +1,5 @@
 import NavMenu from '../components/Nav'
-import Background from '../components/Background'
-import Image from 'next/image'
+import Footer from '../components/Footer'
 import StickyScroll from '../components/ui/sticky-scroll-reveals'
 
 export default function About() {
@@ -8,7 +7,7 @@ export default function About() {
     <main>
       <NavMenu />
       <StickyScroll content={content} />
-      <footer> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
+      <Footer />
     </main>
   )
 }
