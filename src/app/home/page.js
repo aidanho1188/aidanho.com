@@ -1,8 +1,13 @@
 import React from 'react'
+import * as data from '../data'
 import NavMenu from '../components/Nav'
 import Background from '../components/Background'
-import CardStack from '../components/ui/card-stack'
-import Highlight from '../components/ui/highlight'
+import HeroSection from './components/HeroSection'
+import Skills from './components/Skills'
+import Experiences from './components/Experiences'
+import Educations from './components/Educations'
+import Projects from './components/Projects'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const currentYear = new Date().getFullYear()
@@ -10,47 +15,20 @@ export default function Home() {
     <main>
       <NavMenu />
       <Background>
-        <div className='flex flex-col sm:flex-row w-[100vw] items-center m-6'>
-          <p className='text-4xl font-bold z-20 text-ui-text px-8 py-8 w-[50vw] sm:w-[100vw] '>This is a wise quote!</p>
-          <div className='h-[20rem] w-[50vw] sm:w-[100vw] flex items-center justify-center'>
-            <CardStack items={CARDS} />
+        <div className='flex flex-col overflow-y-hidden z-20'>
+          <HeroSection data={data} />
+
+          {/* 
+          <ContactForm data={data} /> */}
+          <div className='bg-ui-background-wo flex flex-col items-center justify-center'>
+            <Skills data={data} />
+            <Experiences data={data} />
+            <Educations data={data} />
+            <Projects data={data} />
           </div>
         </div>
       </Background>
-      <footer> Built with Next.js and Vercel. © {new Date().getFullYear()} Aidan Ho. All rights reserved.</footer>
+      <Footer />
     </main>
   )
 }
-
-const CARDS = [
-  {
-    id: 0,
-    name: 'Project name',
-    designation: 'Link to project page',
-    content: (
-      <p>
-        Project <Highlight>Name</Highlight> description...
-      </p>
-    ),
-  },
-  {
-    id: 1,
-    name: 'Project name',
-    designation: 'Link to project page',
-    content: (
-      <p>
-        Project <Highlight>Name</Highlight> description...
-      </p>
-    ),
-  },
-  {
-    id: 2,
-    name: 'Project name',
-    designation: 'Link to project page',
-    content: (
-      <p>
-        Project <Highlight>Name</Highlight> description...
-      </p>
-    ),
-  },
-]
