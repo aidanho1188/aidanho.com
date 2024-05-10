@@ -10,7 +10,6 @@ import Projects from './components/Projects'
 import Footer from '../components/Footer'
 
 export default function Home() {
-  const currentYear = new Date().getFullYear()
   return (
     <main>
       <NavMenu />
