@@ -1,3 +1,4 @@
+// 'use client'
 import React from 'react'
 import * as data from '../data'
 import NavMenu from '../components/Nav'
@@ -17,8 +18,10 @@ export default function Home() {
       <div className='h-inherit flex flex-col z-10'>
         <HeroSection data={data} />
 
-        {/* <ContactForm data={data} /> */}
-        <div className='bg-ui-background-wo flex flex-col items-center justify-center'>
+        <div className='bg-ui-background-wo flex flex-col items-center justify-center py-12'>
+          <div data-aos='fade-up'>
+            <h1 className='text-3xl font-bold text-ui-text-primary m-6'>Resume</h1>
+          </div>
           <Skills data={data} />
           <Experiences data={data} />
           <Educations data={data} />
