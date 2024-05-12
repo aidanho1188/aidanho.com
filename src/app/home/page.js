@@ -9,6 +9,7 @@ import Experiences from './components/Experiences'
 import Educations from './components/Educations'
 import Projects from './components/Projects'
 import Footer from '../components/Footer'
+import Header from './components/Header'
 
 export default function Home() {
   return (
@@ -19,12 +20,16 @@ export default function Home() {
         <HeroSection data={data} />
 
         <div className='bg-ui-background-wo flex flex-col items-center justify-center py-12'>
-          <div data-aos='fade-up'>
-            <h1 className='text-3xl font-bold text-ui-text-primary m-6'>Resume</h1>
-          </div>
+          <Header title={'Skills'} />
           <Skills data={data} />
+
+          <Header title={'Experiences'} />
           <Experiences data={data} />
+
+          <Header title={'Educations'} />
           <Educations data={data} />
+
+          <Header title={'Projects'} />
           <Projects data={data} />
         </div>
       </div>
