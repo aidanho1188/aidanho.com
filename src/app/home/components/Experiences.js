@@ -1,12 +1,14 @@
+import styles from '../styles/Experiences.module.css'
+
 export default function Experiences({data}) {
   return (
-    <div className='flex flex-col items-center justify-center mt-8 w-full'>
-      {data.experiences.map((job) => (
-        <div key={job.id}>
-          <h2>{job.role}</h2>
-          <h3>{job.company}</h3>
-          <p>{job.duration}</p>
-          <p>{job.description}</p>
+    <div data-aos='fade-up' className={styles.container}>
+      {data.experiences.map(({id, role, company, duration, description}) => (
+        <div key={id}>
+          <h2>{role}</h2>
+          <h3>{company}</h3>
+          <p>{duration}</p>
+          <p>{description}</p>
         </div>
       ))}
     </div>
