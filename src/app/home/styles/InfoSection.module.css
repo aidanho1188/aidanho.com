@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    margin: 2rem;
+  }
+}

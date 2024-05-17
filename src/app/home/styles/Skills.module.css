@@ -41,8 +41,9 @@
   justify-content: center;
   margin: 1rem;
   padding: 1rem;
-  border: 1px solid gray;
-  background-color: gray;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background-color: rgba(39, 39, 43, 0.4);
 }
 
 @media screen and (max-width: 768px) {

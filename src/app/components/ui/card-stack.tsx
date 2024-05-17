@@ -47,10 +47,10 @@ const CardStack = ({items, offset, scaleFactor}: {items: Card[]; offset?: number
               zIndex: cards.length - index, //  decrease z-index for the cards that are behind
             }}
           >
-            <div className='font-normal text-neutral-700 dark:text-neutral-200'>{card.content}</div>
+            <div className='font-normal text-ui-text-neutral'>{card.content}</div>
             <div>
-              <p className='text-neutral-500 font-medium dark:text-white'>{card.name}</p>
-              <p className='text-neutral-400 font-normal dark:text-neutral-200'>{card.designation}</p>
+              <p className='font-medium text-ui-text-neutral'>{card.name}</p>
+              <p className='font-normal text-ui-text-neutral'>{card.designation}</p>
             </div>
           </motion.div>
         )
