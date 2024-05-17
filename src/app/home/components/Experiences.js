@@ -2,7 +2,7 @@ import styles from '../styles/Experiences.module.css'
 
 export default function Experiences({data}) {
   return (
-    <div data-aos='fade-up' className={styles.container}>
+    <div data-aos='zoom-in' className={styles.container}>
       {data.experiences.map(({id, role, company, duration, description}) => (
         <div key={id}>
           <h2>{role}</h2>

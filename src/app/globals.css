@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* for mobile menu */
   .slide-in {
     @apply transform translate-x-full transition-transform ease-in-out duration-300;
   }
@@ -15,12 +16,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-color: #55a0cc;
   --background-end-color: #fababa;
-  --ui-background-color: rgb(194, 194, 194);
-  --ui-background-color-opacity: rgba(194, 194, 194, 0.8);
-  --ui-text-color: black;
-  --ui-border-color: rgb(255, 255, 255, 0.1);
+  --ui-background-color: rgb(245, 245, 245);
+  --ui-background-color-opacity: rgba(245, 245, 245, 0.8);
+  --ui-text-color: rgb(27, 27, 27);
+  --ui-border-color: rgb(27, 27, 27, 0.1);
   --ui-text-neutral: 700;
-  --bg-color: rgb(255, 255, 255);
+  --bg-color: rgb(245, 245, 245);
+  --seperator-color: rgb(27, 27, 27, 0.5);
 }
 
 .dark-mode {
@@ -28,11 +30,12 @@
   --background-start-color: #0a1020;
   --background-end-color: #8f0088;
   --ui-background-color: rgb(0, 0, 0);
-  --ui-background-color-opacity: rgb(0, 0, 0, 0.8);
-  --ui-text-color: white;
-  --ui-border-color: rgb(0, 0, 0, 0.1);
+  --ui-background-color-opacity: rgb(27, 27, 27, 0.8);
+  --ui-text-color: rgb(245, 245, 245);
+  --ui-border-color: rgba(0, 0, 0, 0.1);
   --ui-text-neutral: 300;
-  --bg-color: rgb(0, 3, 34);
+  --bg-color: rgb(27, 27, 27);
+  --seperator-color: rgb(245, 245, 245, 0.5);
 }
 
 body {
