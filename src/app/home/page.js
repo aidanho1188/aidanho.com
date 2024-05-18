@@ -35,7 +35,6 @@ export default function Home() {
 
           <Header title={'Projects'} />
           <Projects data={data.projects} />
-          <Seperator />
         </div>
       </div>
       <Footer />
