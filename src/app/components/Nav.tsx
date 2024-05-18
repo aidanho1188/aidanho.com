@@ -99,6 +99,9 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
       <Menu setActive={setActive}>
+        <Link href='/home' className='fixed left-10  cursor-pointer text-ui-text'>
+          <i className='fas fa-home font-bold font-i text-xl'>AH</i>
+        </Link>
         <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
           Home
         </Link>
