@@ -1,6 +1,6 @@
 .seperator {
-  border-top: 1px solid;
-  border-color: var(--seperator-color);
+  background: linear-gradient(to right, transparent, var(--seperator-color), transparent);
+  height: 2px;
   margin: 5rem 0;
   transform-origin: center;
   width: 100%;
