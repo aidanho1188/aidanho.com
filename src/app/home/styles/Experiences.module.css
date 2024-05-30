@@ -1,8 +1,39 @@
-/* .container {
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-top: 2rem;
   width: 100%;
-} */
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 2rem;
+  padding: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin: 0 2rem;
+  padding: 2rem;
+  background-color: rgba(39, 39, 43, 0.4);
+  border-radius: 0.5rem;
+  border-color: transparent;
+  border-width: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    margin: 2rem;
+  }
+}

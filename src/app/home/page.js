@@ -5,7 +5,7 @@ import NavMenu from '../components/Nav'
 import Background from '../components/Background'
 import HeroSection from './components/HeroSection'
 import Skills from './components/Skills'
-// import Experiences from './components/Experiences'
+import Experiences from './components/Experiences'
 import InfoSection from './components/InfoSection'
 import Projects from './components/Projects'
 import Footer from '../components/Footer'
@@ -26,7 +26,7 @@ export default function Home() {
           <Seperator />
 
           <Header title={'Experiences'} />
-          <InfoSection data={data.experiences} />
+          <Experiences data={data} />
           <Seperator />
 
           <Header title={'Educations'} />
