@@ -1,5 +1,5 @@
 const quote = {
-  text: 'There are things we can have, but can’t keep.',
+  text: 'Curiosity sparks when you take action, not when you keep it in your head.',
 }
 
 export default quote

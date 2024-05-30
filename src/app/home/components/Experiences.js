@@ -5,10 +5,12 @@ export default function Experiences({data}) {
     <div data-aos='zoom-in' className={styles.container}>
       {data.experiences.map(({id, role, company, duration, description}) => (
         <div key={id}>
-          <h2>{role}</h2>
-          <h3>{company}</h3>
-          <p>{duration}</p>
-          <p>{description}</p>
+          <div className={styles.item}>
+            <h2>{role}</h2>
+            <h3>{company}</h3>
+            <p>{duration}</p>
+          </div>
+          <p className={styles.description}>{description}</p>
         </div>
       ))}
     </div>

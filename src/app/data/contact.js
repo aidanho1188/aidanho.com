@@ -2,17 +2,17 @@ const contact = [
   {
     id: 1,
     name: 'Email',
-    address: '',
+    address: 'aidanho23657@gmail.com',
   },
   {
     id: 2,
     name: 'LinkedIn',
-    address: '',
+    address: 'www.linkedin.com/in/aidan-ho-07415b198',
   },
   {
     id: 3,
     name: 'GitHub',
-    address: '',
+    address: 'https://github.com/aidanho1188',
   },
 ]
 
