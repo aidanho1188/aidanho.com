@@ -4,13 +4,13 @@ export default function Experiences({data}) {
   return (
     <div className={styles.container}>
       {data.experiences.map(({id, role, company, duration, description}) => (
-        <div data-aos='fade-right' key={id}>
-          <div className={styles.item}>
-            <h2>{role}</h2>
+        <div data-aos='fade-right' key={id} className={styles.card}>
+          <div className={styles.head}>
+            <div className={styles.role}>{role}</div>
             <h3>{company}</h3>
-            <p>{duration}</p>
+            <i>{duration}</i>
           </div>
-          <p className={styles.description}>{description}</p>
+          <p>{description}</p>
         </div>
       ))}
     </div>
