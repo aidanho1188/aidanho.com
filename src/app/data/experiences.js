@@ -6,14 +6,14 @@ const experiences = [
     role: 'Student Software Developer',
     company: 'Upright Education',
     duration: 'Oct 2023 - Apr 2024',
-    description: 'Worked on a team of developers to create a web application that helps students find the right career path for them. The application uses a quiz to determine the best career path for the student based on their interests and skills.',
+    description: 'Worked on a team of developers to create a web application for our client. Used React, Node.js, and MongoDB to build the application. Communicated with the client to gather requirements and provide updates on the project. Participated in code reviews and testing to ensure the quality of the application.',
   },
   {
     id: 2,
     role: 'Library Assistant',
     company: 'York County Community College',
     duration: 'June 2019 - May 2020',
-    description: 'Assist students and faculty with research and finding resources. Help students with computer issues and printing. Manage the library’s social media accounts and create promotional materials for library events.',
+    description: 'Assist students and faculty with research and finding resources. Help students with computer issues and printing. Organize and shelve books and other materials. Maintain a clean and organized library space. Assist with library events and programs.',
   },
 ]
 

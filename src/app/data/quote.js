@@ -1,5 +1,5 @@
 const quote = {
-  text: 'Curiosity sparks when you take action, not when you keep it in your head.',
+  text: 'Create with purpose, share with passion.',
 }
 
 export default quote
