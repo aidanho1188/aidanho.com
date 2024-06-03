@@ -19,10 +19,27 @@
   border-color: transparent;
   border-width: 1px;
   cursor: pointer;
+  width: 40vw;
+  flex: 1 1 auto;
+  min-height: 250px;
 }
 
 .card:hover {
   border-color: #f0f0f0;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 .contents {
