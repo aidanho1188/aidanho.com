@@ -7,7 +7,7 @@ let interval: any
 type Card = {
   id: number
   name: string
-  designation: string
+  link: string
   content: React.ReactNode
 }
 
@@ -47,10 +47,10 @@ const CardStack = ({items, offset, scaleFactor}: {items: Card[]; offset?: number
               zIndex: cards.length - index, //  decrease z-index for the cards that are behind
             }}
           >
-            <div className='font-normal text-ui-text-neutral'>{card.content}</div>
+            <div className='font-small text-ui-text-neutral'>{card.content}</div>
             <div>
-              <p className='font-medium text-ui-text-neutral'>{card.name}</p>
-              <p className='font-normal text-ui-text-neutral'>{card.designation}</p>
+              <a href={card.link} className='font-medium text-ui-text-neutral'>{card.name}</a>
+              {/* <p className='font-normal text-ui-text-neutral'>{card.link}</p> */}
             </div>
           </motion.div>
         )
