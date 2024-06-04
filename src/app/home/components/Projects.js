@@ -5,10 +5,10 @@ export default function Projects({data}) {
     <div className={styles.container}>
       {data.map(({id, name, description, duration, link}) => (
         <a data-aos='zoom-in' key={id} className={styles.card} href={link}>
-          <div>Icon</div>
+          {/* <div>Icon</div> */}
           <div className={styles.contents}>
-            <p>{name}</p>
-            <p>{description}</p>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.description}>{description}</div>
             <p>{duration}</p>
           </div>
         </a>
