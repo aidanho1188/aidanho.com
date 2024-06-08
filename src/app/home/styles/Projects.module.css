@@ -14,10 +14,11 @@
   justify-content: center;
   margin: 0 1rem;
   padding: 2rem;
-  background-color: rgba(39, 39, 43, 0.4);
+  background-color: var(--ui-background-color);
   border-radius: 0.5rem;
   border-color: transparent;
   border-width: 1px;
+  box-shadow: 0 0 5px var(--ui-border-color);
   cursor: pointer;
   width: 40vw;
   flex: 1 1 auto;
@@ -25,13 +26,13 @@
 }
 
 .card:hover {
-  border-color: #f0f0f0;
+  border-color: var(--ui-border-color);
 }
 
 .name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #f0f0f0;
+  color: var(--ui-text-color);
 }
 
 .description {

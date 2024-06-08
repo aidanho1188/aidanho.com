@@ -2,7 +2,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   color: text-ui-text-primary;
-  margin: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
   border-bottom: 2px solid currentColor;
   padding-bottom: 1rem;
 }

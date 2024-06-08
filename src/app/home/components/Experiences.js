@@ -3,7 +3,7 @@ import styles from '../styles/Experiences.module.css'
 export default function Experiences({data}) {
   return (
     <div className={styles.container}>
-      {data.experiences.map(({id, role, company, duration, description}) => (
+      {data.map(({id, role, company, duration, description}) => (
         <div data-aos='fade-right' key={id} className={styles.card}>
           <div className={styles.head}>
             <div className={styles.role}>{role}</div>

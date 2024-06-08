@@ -15,7 +15,7 @@ export default function About() {
 const content = [
   {
     title: 'Introduction',
-    description: "A detailed introduction about who you are, what you do, and what you're passionate about in software development.",
+    description: "Greeting! My name is Aidan, and I'm a software developer based in Maine. I'm a lifelong learner who is passionate about technology and science. I",
     content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of me</div>,
   },
   {
