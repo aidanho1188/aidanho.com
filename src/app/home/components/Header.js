@@ -1,7 +1,9 @@
+import styles from '../styles/Header.module.css'
+
 export default function Header({title}) {
   return (
-    <div data-aos='fade-in'>
-      <div className='text-3xl font-bold text-ui-text-primary m-4'>{title}</div>
+    <div data-aos='fade-right'>
+      <div className={styles.header}>{title}</div>
     </div>
   )
 }

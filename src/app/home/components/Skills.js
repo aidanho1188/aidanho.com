@@ -10,7 +10,6 @@ export default function Skills({data}) {
         {data.skills.map(({id, name, experience}) => (
           <div key={id} className={styles.card}>
             <p>{name}</p>
-            {/* <p>{experience}</p> */}
           </div>
         ))}
       </div>

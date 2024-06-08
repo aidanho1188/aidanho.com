@@ -18,6 +18,7 @@ module.exports = {
         'ui-borderui-border': 'var(--ui-border-color)',
         'ui-neutral': 'var(--ui-text-neutral)',
         'background-color': 'var(--bg-color)',
+        'background-color-wo': 'var(--bg-color-wo)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

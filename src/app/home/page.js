@@ -20,13 +20,13 @@ export default function Home() {
       <div className='h-inherit flex flex-col z-10'>
         <HeroSection data={data} />
 
-        <div className='border-t-2 border-b-2 border-ui-borderui-border bg-ui-background-wo flex flex-col items-center justify-center py-12'>
+        <div className='border-t-2 border-b-2 border-ui-borderui-border bg-background-color flex flex-col justify-center py-12'>
           <Header title={'Skills'} />
           <Skills data={data} />
           <Seperator />
 
           <Header title={'Experiences'} />
-          <Experiences data={data} />
+          <Experiences data={data.experiences} />
           <Seperator />
 
           <Header title={'Educations'} />
