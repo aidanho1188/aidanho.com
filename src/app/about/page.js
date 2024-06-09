@@ -15,22 +15,23 @@ export default function About() {
 const content = [
   {
     title: 'Introduction',
-    description: "Greeting! My name is Aidan, and I'm a software developer based in Maine. I'm a lifelong learner who is passionate about technology and science. I",
+    description: "Greeting! My name is Aidan, and I'm a software developer based in Maine. I'm a lifelong learner who is passionate about technology and science. I love solving problems and building things, and I'm always looking for new challenges and opportunities to grow. In this portfolio, you'll find information about my background, skills, work experience, projects, and personal interests. I hope you enjoy learning more about me and my work!",
     content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of me</div>,
   },
   {
     title: 'Background',
-    description: 'Talk about how you got into software development. This could include your education, self-learning journey, or any other experiences that led you to this career.',
+    description:
+      'I grew up in Vietnam without technology, but I was always curious about how things worked. I moved to a farm when I was around 6 years old. The extra time lead me to make my own toys and games which sharpened my problem solving skills and creativity. I moved to the US when I was 10 and started learning about technology. I started learning about programming in high school and have been hooked ever since. I love the creativity and problem solving that comes with programming, and I enjoy the challenge of building things that are useful and impactful.',
     content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Picture of location</div>,
   },
   {
     title: 'Skills and Expertise',
-    description: 'A detailed list of your technical skills and areas of expertise. You could talk about your proficiency in different programming languages, your experience with different frameworks and technologies, and any special areas of knowledge or interest.',
+    description: 'React JS, Next JS, Tailwind CSS, Node JS, Express JS, MongoDB, Git, GitHub, HTML, CSS, JavaScript, Python, Java, C++, SQL, RESTful APIs, Agile, Scrum, and Jira. I am always learning new technologies and expanding my skill set, so this list is always growing and evolving. I am passionate about technology and love to learn new things, so I am always looking for new challenges and opportunities to grow and improve my skills',
     content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white'>Picture of skills/programming language</div>,
   },
   {
     title: 'Work Experience',
-    description: 'Detailed descriptions of your past roles, the projects you worked on, and the impact you made. This could be similar to the work experience section on a resume, but with more emphasis on the story and the results.',
+    description: 'A summary of your work experience, including your current role, previous roles, and key responsibilities and accomplishments. This helps to show your professional background and experience, and gives the reader a sense of your career trajectory and accomplishments. You can also include any relevant internships, freelance work, or side projects that you have worked on.',
     content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of real life project</div>,
   },
   {
