@@ -21,7 +21,7 @@ export default function Home() {
       <div className='h-inherit flex flex-col z-10'>
         <HeroSection data={data} contentsRef={contentsRef} />
 
-        <div ref={contentsRef} className='border-t-2 border-b-2 border-ui-borderui-border bg-background-color flex flex-col justify-center py-12'>
+        <div ref={contentsRef} className='border-t-[1px] border-b-[1px] border-ui-border bg-background-color flex flex-col justify-center py-12'>
           <Header title={'Skills'} />
           <Skills data={data} />
           <Seperator />

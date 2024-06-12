@@ -16,8 +16,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-color: #55a0cc;
   --background-end-color: #fababa;
-  --ui-background-color: rgb(241, 236, 226);
-  --ui-background-color-opacity: rgba(255, 255, 255, 0.8);
+  --ui-background-color: rgb(248, 246, 241);
+  --ui-background-color-wo: rgba(255, 255, 255, 0.8);
   --ui-text-color: rgb(27, 27, 27);
   --ui-border-color: rgb(27, 27, 27, 0.2);
   --ui-text-neutral: 700;
@@ -31,7 +31,7 @@
   --background-start-color: #0a1020;
   --background-end-color: #8f0088;
   --ui-background-color: rgb(7, 3, 41);
-  --ui-background-color-opacity: rgba(0, 0, 0, 0.8);
+  --ui-background-color-wo: rgba(0, 0, 0, 0.8);
   --ui-text-color: rgb(245, 245, 245);
   --ui-border-color: rgba(230, 230, 230, 0.2);
   --ui-text-neutral: 300;

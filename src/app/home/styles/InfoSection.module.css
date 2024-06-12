@@ -11,7 +11,7 @@
   align-items: center;
   margin: 2rem;
   box-shadow: 0 0 10px var(--ui-border-color);
-  background-color: var(--ui-background-color);
+  background-color: var(--ui-background-color-wo);
   border-radius: 10px;
   padding: 1rem;
 }

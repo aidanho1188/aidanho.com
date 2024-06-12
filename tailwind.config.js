@@ -12,8 +12,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ui-background-wo': 'var(--ui-background-color)',
-        'ui-background': 'var(--ui-background-color-opacity)',
+        'ui-background': 'var(--ui-background-color)',
+        'ui-background-wo': 'var(--ui-background-color-wo)',
         'ui-text': 'var(--ui-text-color)',
         'ui-borderui-border': 'var(--ui-border-color)',
         'ui-neutral': 'var(--ui-text-neutral)',

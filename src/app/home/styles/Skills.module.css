@@ -43,8 +43,9 @@
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
+  box-shadow: 0 0 3px var(--ui-border-color);
   color: var(--ui-text-color);
-  background-color: var(--ui-background-color);
+  background-color: var(--ui-background-color-wo);
 }
 
 @media screen and (max-width: 768px) {
