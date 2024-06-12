@@ -45,7 +45,7 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 3px var(--ui-border-color);
   color: var(--ui-text-color);
-  background-color: var(--ui-background-color-wo);
+  background-color: var(--ui-background-color);
 }
 
 @media screen and (max-width: 768px) {
