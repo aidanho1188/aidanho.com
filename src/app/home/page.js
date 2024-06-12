@@ -1,5 +1,5 @@
-// 'use client'
-import React from 'react'
+'use client'
+import React, {useRef, useEffect} from 'react'
 import * as data from '../data'
 import NavMenu from '../components/Nav'
 import Background from '../components/Background'
@@ -13,14 +13,15 @@ import Header from './components/Header'
 import Seperator from '../components/Seperator'
 
 export default function Home() {
+  const contentsRef = useRef(null)
   return (
     <main>
       <NavMenu />
       <Background />
       <div className='h-inherit flex flex-col z-10'>
-        <HeroSection data={data} />
+        <HeroSection data={data} contentsRef={contentsRef} />
 
-        <div className='border-t-2 border-b-2 border-ui-borderui-border bg-background-color flex flex-col justify-center py-12'>
+        <div ref={contentsRef} className='border-t-[1px] border-b-[1px] border-ui-border bg-background-color flex flex-col justify-center py-12'>
           <Header title={'Skills'} />
           <Skills data={data} />
           <Seperator />
