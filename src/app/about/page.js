@@ -1,6 +1,7 @@
 import NavMenu from '../components/Nav'
 import Footer from '../components/Footer'
 import StickyScroll from '../components/ui/sticky-scroll-reveals'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -16,7 +17,11 @@ const content = [
   {
     title: 'Introduction',
     description: "Greeting! My name is Aidan, and I'm a software developer based in Maine. I'm a lifelong learner who is passionate about technology and science. In this portfolio, you'll find information about my background, skills, work experience, projects, and personal interests. I hope you enjoy learning more about me and my work!",
-    content: <div className='h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>Picture of me</div>,
+    content: (
+      <div className='h-[100%] w-[100%] bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white'>
+        <Image src='/images/me.jpg' alt='picture of me' width={1000} height={1000} />
+      </div>
+    ),
   },
   {
     title: 'Background',
