@@ -20,7 +20,7 @@
 }
 
 .imgSize {
-  width: 50%;
+  width: 25vw;
   height: auto;
 }
 
@@ -43,7 +43,8 @@
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
-  background-color: rgba(39, 39, 43, 0.4);
+  color: var(--ui-text-color);
+  background-color: var(--ui-background-color);
 }
 
 @media screen and (max-width: 768px) {
