@@ -9,7 +9,7 @@ export default function Skills({data}) {
       <div data-aos='fade-left' className={styles.right}>
         {data.skills.map(({id, name, experience}) => (
           <div key={id} className={styles.card}>
-            <p>{name}</p>
+            <div>{name}</div>
           </div>
         ))}
       </div>

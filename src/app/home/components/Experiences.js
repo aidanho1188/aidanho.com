@@ -10,7 +10,7 @@ export default function Experiences({data}) {
             <h3>{company}</h3>
             <i>{duration}</i>
           </div>
-          <p>{description}</p>
+          <div>{description}</div>
         </div>
       ))}
     </div>

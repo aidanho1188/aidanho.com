@@ -9,7 +9,7 @@ export default function Projects({data}) {
           <div className={styles.contents}>
             <div className={styles.name}>{name}</div>
             <div className={styles.description}>{description}</div>
-            <p>{duration}</p>
+            <div>{duration}</div>
           </div>
         </a>
       ))}

@@ -28,7 +28,7 @@ export default function Arts() {
           <div key={`content-${index}`} className='mb-10 px-2 w-full text-ui-text'>
             <h2 className='bg-background-color-wo rounded-full text-sm w-fit px-4 py-1 mb-4'>{item.badge}</h2>
 
-            <p className={'text-xl mb-4'}>{item.title}</p>
+            <div className={'text-xl mb-4'}>{item.title}</div>
 
             <div className='text-sm prose prose-sm '>
               {item?.image && <Image src={item.image} alt='blog thumbnail' height='1000' width='1000' className='rounded-lg mb-10 object-cover' />}
@@ -47,11 +47,7 @@ const dummyContent = [
     title: 'Lorem Ipsum Dolor Sit Amet',
     description: (
       <>
-        <p>
-          This is my first digital art that I did. I created it through code.org using their "Turtle Graphics". It was a final project for our computer science class in high school.  
-        </p>
-        {/* <p>Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad veniam in commodo id reprehenderit adipisicing. Proident duis exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.</p>
-        <p>Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod reprehenderit deserunt amet laborum consequat adipisicing officia qui irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud. Amet culpa officia aliquip deserunt veniam deserunt officia adipisicing aliquip proident officia sunt.</p> */}
+        <div>This is my first digital art that I did. I created it through code.org using their "Turtle Graphics". It was a final project for our computer science class in high school.</div>
       </>
     ),
     badge: 'Painting',
@@ -61,8 +57,8 @@ const dummyContent = [
     title: 'Lorem Ipsum Dolor Sit Amet',
     description: (
       <>
-        <p>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</p>
-        {/* <p>In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proident reprehenderit. Laborum exercitation aliqua reprehenderit ea sint cillum ut mollit.</p> */}
+        <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
+        {/* <div>In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proident reprehenderit. Laborum exercitation aliqua reprehenderit ea sint cillum ut mollit.</div> */}
       </>
     ),
     badge: 'Digital Art',
@@ -72,7 +68,7 @@ const dummyContent = [
     title: 'Lorem Ipsum Dolor Sit Amet',
     description: (
       <>
-        <p>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</p>
+        <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
       </>
     ),
     badge: 'Music Video',

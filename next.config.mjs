@@ -4,9 +4,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'usm.maine.edu',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'images.unsplash.com',
-        // port: '',
-        // pathname: '/account123/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
       },
     ],
   },
