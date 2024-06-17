@@ -8,7 +8,7 @@
 
 .hero-left {
   font-style: italic;
-  width: 50%;
+  width: 50vw;
   text-align: center;
   padding-left: 1rem;
   margin: 2rem;
@@ -22,7 +22,7 @@
 }
 
 .hero-right {
-  width: 50%;
+  width: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
