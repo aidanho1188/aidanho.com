@@ -47,7 +47,7 @@ const dummyContent = [
     title: 'Lorem Ipsum Dolor Sit Amet',
     description: (
       <>
-        <div>This is my first digital art that I did. I created it through code.org using their "Turtle Graphics". It was a final project for our computer science class in high school.</div>
+        <div>This is my first digital art that I did. I created it through code.org using their &quotTurtle Graphics&quot. It was a final project for our computer science class in high school.</div>
       </>
     ),
     badge: 'Painting',
