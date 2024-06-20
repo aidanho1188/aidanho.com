@@ -31,7 +31,7 @@ export default function Arts() {
             <div className={'text-xl mb-4'}>{item.title}</div>
 
             <div className='text-sm prose prose-sm '>
-              {item?.image && <Image src={item.image} alt='blog thumbnail' height='1000' width='1000' className='rounded-lg mb-10 object-cover' />}
+              {item?.image && <Image src={item.image} alt='blog thumbnail' height={item.height || 1000} width={item.width || 1000} className='rounded-lg mb-10 object-cover' />}
               {item.description}
             </div>
           </div>
@@ -44,34 +44,35 @@ export default function Arts() {
 
 const dummyContent = [
   {
-    title: 'Lorem Ipsum Dolor Sit Amet',
+    title: 'First Digital Art',
     description: (
       <>
-        <div>This is my first digital art that I did. I created it through code.org using their &quotTurtle Graphics&quot. It was a final project for our computer science class in high school.</div>
-      </>
-    ),
-    badge: 'Painting',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
-        {/* <div>In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proident reprehenderit. Laborum exercitation aliqua reprehenderit ea sint cillum ut mollit.</div> */}
+        <div>This page is based on my first digital art that I did in high school. I created this piece through code.org using their &quot;Turtle Graphics&quot;. </div>
       </>
     ),
     badge: 'Digital Art',
-    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '/images/arts/first-digital-art.jpg',
+    height: 260,
+    width: 260,
   },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
-      </>
-    ),
-    badge: 'Music Video',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
+  // {
+  //   title: 'Lorem Ipsum Dolor Sit Amet',
+  //   description: (
+  //     <>
+  //       <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
+  //     </>
+  //   ),
+  //   badge: 'Digital Art',
+  //   image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
+  // {
+  //   title: 'Lorem Ipsum Dolor Sit Amet',
+  //   description: (
+  //     <>
+  //       <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
+  //     </>
+  //   ),
+  //   badge: 'Music Video',
+  //   image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  // },
 ]

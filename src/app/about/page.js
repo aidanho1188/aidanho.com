@@ -29,10 +29,10 @@ const content = [
       <>
         <div>I grew up in Vietnam without technology, but I was always curious about how things worked. I moved to a farm when I was around 6 years old. The extra time lead me to make my own toys and games which sharpened my problem solving skills and creativity. I also learned about the importance of hard work and perseverance from my parents, who worked tirelessly to provide for our family. I am grateful for the lessons they taught me and the values they instilled in me.</div>
         <br />
-        <div>At 10 years old, I moved to the US with my family and was amazed by the advancement of technology here. I started learning about computer science in high school through a book called &quotUnderstanding Computers: Today and Tomorrow&quot by Charles S. Parker. This book introduced me to the world of technology, where I am constantly amazed by our ingenuity in solving problems and drawn to the endless opportunities for learning that it provides.</div>
+        <div>At 10 years old, I moved to the US with my family and was amazed by the advancement of technology here. I started learning about computer science in high school through a book called &quot;Understanding Computers: Today and Tomorrow&quot; by Charles S. Parker. This book introduced me to the world of technology, where I am constantly amazed by our ingenuity in solving problems and drawn to the endless opportunities for learning that it provides.</div>
         <br />
         <div>
-          Wanting to pursue my curiosity and learn more about computer science, I enrolled in college to major in this field. I graduated with an Associate degree in Computer Science. My plan to complete a bachelor&aposs degree was disrupted by the COVID-19 pandemic, but I didn&apost let that stop me. I enrolled in Upright Education bootcamp through UNE to continue my education and further develop my skills. The bootcamp allowed me to put the theory I learned in college into practice and gain
+          Wanting to pursue my curiosity and learn more about computer science, I enrolled in college to major in this field. I graduated with an Associate degree in Computer Science. My plan to complete a bachelor&apos;s degree was disrupted by the COVID-19 pandemic, but I didn&apos;t let that stop me. I enrolled in Upright Education bootcamp through UNE to continue my education and further develop my skills. The bootcamp allowed me to put the theory I learned in college into practice and gain
           real-world software development experience.
         </div>
       </>
@@ -79,7 +79,7 @@ const content = [
         </div>
         <br />
         <div>
-          The Upright Education capstone project was a full-stack application built with a third-party API, Service Channel, which allowed our client to manage work orders from HomeDepot and manually update worker&aposs status. I was selected to be the team lead for the capstone project because of my knowledge in computer science. Although I held the role of team lead for this project, I was fortunate to work with a team of leaders. Each member brought their unique leadership qualities to the
+          The Upright Education capstone project was a full-stack application built with a third-party API, Service Channel, which allowed our client to manage work orders from HomeDepot and manually update worker&apos;s status. I was selected to be the team lead for the capstone project because of my knowledge in computer science. Although I held the role of team lead for this project, I was fortunate to work with a team of leaders. Each member brought their unique leadership qualities to the
           table, contributing to our collective success. Throughout the project, we had to learn and adapt to many new tools on the fly, including the Vite framework, Shadcn, Jira, and the Service Channel API. Despite the challenges, we all excelled and leveraged these tools to our advantage. I want to give a shoutout to my teammates,{' '}
           <LinkPreview url='https://www.linkedin.com/in/davidblumenshine' isStatic imageSrc='https://media.licdn.com/dms/image/D5603AQF9k3jwrPwmlw/profile-displayphoto-shrink_200_200/0/1701922608924?e=1724284800&v=beta&t=VisRc9B1OI6NLtouvhENl_DRzFi8sd1jFg6L-PszwFQ' className='font-bold'>
             David Blumenshine
@@ -92,11 +92,11 @@ const content = [
         </div>
         <br />
         <div>
-          For the RPN Calculator project, I built a reverse polish notation calculator using Java while attending one of my favorite classes, &quotThe Art and Craft of Software Development&quot, at USM. This class was taught by an inspirational professor,{' '}
+          For the RPN Calculator project, I built a reverse polish notation calculator using Java while attending one of my favorite classes, &quot;The Art and Craft of Software Development&quot;, at USM. This class was taught by an inspirational professor,{' '}
           <LinkPreview url='https://cs.usm.maine.edu/~houser/cos470/' isStatic imageSrc='https://usm.maine.edu/directories/wp-content/uploads/sites/49/2022/09/Houser_0.jpg' className='font-bold'>
             Stephen Houser
           </LinkPreview>
-          . We studied the amazing book &quotClean Code: A Handbook of Agile Software Craftsmanship&quot. This project was a great learning experience for me, it was the first time I put software development theory into practice. I learned a lot about software development best practices, such as writing clean code, using version control, and CI/CD. I also learned about the importance of testing and debugging.
+          . We studied the amazing book &quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot;. This project was a great learning experience for me, it was the first time I put software development theory into practice. I learned a lot about software development best practices, such as writing clean code, using version control, and CI/CD. I also learned about the importance of testing and debugging.
         </div>
         <br />
         <div>I am proud of these projects because they showcase my skills and expertise as a software developer. I am always looking for new projects and challenges to work on, so I am excited to see what the future holds!</div>

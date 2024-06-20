@@ -111,22 +111,28 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
         <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
           Arts
         </Link>
-        <MenuItem setActive={setActive} active={active} item='Projects'>
+        <Link href='/projects' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          Projects
+        </Link>
+        {/* <MenuItem setActive={setActive} active={active} item='Projects'>
           <div className='flex flex-col space-y-4 text-sm'>
             <HoveredLink href='/hobby'>Hobby</HoveredLink>
             <HoveredLink href='/individual'>Individual</HoveredLink>
             <HoveredLink href='/team'>Team</HoveredLink>
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item='Contact'>
+        </MenuItem> */}
+        <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          Contact
+        </Link>
+        {/* <MenuItem setActive={setActive} active={active} item='Contact'>
           <div className='flex flex-col space-y-4 text-sm'>
             <HoveredLink href='/hobby'>Hobby</HoveredLink>
             <HoveredLink href='/individual'>Individual</HoveredLink>
             <HoveredLink href='/team'>Team</HoveredLink>
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
-        </MenuItem>
+        </MenuItem> */}
         {setAnimationOn && (
           <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200 text-ui-text' onClick={() => setAnimationOn(!isAnimationOn)}>
             <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
