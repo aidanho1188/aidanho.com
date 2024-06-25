@@ -1,9 +1,9 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0 5rem;
   gap: 2rem;
 }
 
@@ -12,16 +12,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 16px;
   background-color: var(--ui-background-color);
   border-radius: 0.5rem;
   border-color: transparent;
   border-width: 1px;
   box-shadow: 0 0 5px var(--ui-border-color);
   cursor: pointer;
-  width: 40vw;
   flex: 1 1 auto;
-  min-height: 350px;
+  max-width: 250px;
+  min-height: 60vh;
 }
 
 .card:hover {
@@ -36,6 +36,8 @@
 
 .description {
   display: flex;
+  font: 1em sans-serif;
+  font-weight: 300;
   flex-direction: column;
   align-items: start;
   justify-content: center;
@@ -54,5 +56,6 @@
   }
   .card {
     width: 80vw;
+    max-width: 80vw;
   }
 }

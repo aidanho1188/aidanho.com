@@ -6,6 +6,7 @@ import Stars from '../components/ui/Stars'
 import Trees from '../components/ui/Trees'
 import NavMenu from '../components/Nav'
 import Image from 'next/image'
+import {LinkPreview} from '../components/ui/link-preview'
 
 import './style.css'
 
@@ -31,7 +32,7 @@ export default function Arts() {
             <div className={'text-xl mb-4'}>{item.title}</div>
 
             <div className='text-sm prose prose-sm '>
-              {item?.image && <Image src={item.image} alt='blog thumbnail' height={item.height || 1000} width={item.width || 1000} className='rounded-lg mb-10 object-cover' />}
+              {item?.image && <Image src={item.image} alt='blog thumbnail' height={item.height || 1000} width={item.width || 1000} className='rounded-lg mb-10 object-cover mx-auto' />}
               {item.description}
             </div>
           </div>
@@ -55,16 +56,28 @@ const dummyContent = [
     height: 260,
     width: 260,
   },
-  // {
-  //   title: 'Lorem Ipsum Dolor Sit Amet',
-  //   description: (
-  //     <>
-  //       <div>Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.</div>
-  //     </>
-  //   ),
-  //   badge: 'Digital Art',
-  //   image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  // },
+  {
+    title: 'Abstract Painting of Kennebunkport',
+    description: (
+      <>
+        <div>
+          {' '}
+          This painting is based on our favorite fishing spot,{' '}
+          <LinkPreview url='https://kennebunkportmainelodging.com/spring-photos-and-images/colony-beach-6/' className='font-bold'>
+            Colony Beach
+          </LinkPreview>{' '}
+          in Kennebunk, Maine. This piece was created using{' '}
+          <LinkPreview url='https://www.sketchbook.com/' className='font-bold'>
+            Sketchbook
+          </LinkPreview>
+        </div>
+      </>
+    ),
+    // badge: 'Digital Art',
+    image: '/images/arts/beach.jpg',
+    height: 500,
+    width: 500,
+  },
   // {
   //   title: 'Lorem Ipsum Dolor Sit Amet',
   //   description: (

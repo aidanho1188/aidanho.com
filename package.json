@@ -12,6 +12,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-label": "^2.1.0",
+    "@tabler/icons-react": "^3.6.0",
     "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
