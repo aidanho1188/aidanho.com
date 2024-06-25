@@ -13,6 +13,7 @@ export default function Contact() {
         <h2 className='text-center text-3xl font-bold m-5'>Contact</h2>
         <div className={styles.container}>
           <ContactForm className={styles.left} />
+          {/* TODO: put this into a seperate component */}
           <div className={styles.right}>
             <h3 className='text-2xl font-bold m-5'>Contact Information</h3>
             <p className='m-5'>
@@ -39,6 +40,7 @@ export default function Contact() {
                 aidanho23657
               </a>
             </p>
+            <p className='m-5'>Feel free to reach out to me if you have any questions or would like to collaborate on a project including art projects, web development, or anything else!</p>
           </div>
         </div>
       </div>
