@@ -73,7 +73,7 @@ const dummyContent = [
         </div>
       </>
     ),
-    // badge: 'Digital Art',
+    badge: 'Digital Art',
     image: '/images/arts/beach.jpg',
     height: 500,
     width: 500,
