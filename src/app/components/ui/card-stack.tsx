@@ -40,6 +40,8 @@ const CardStack = ({items, offset, scaleFactor}: {items: Card[]; offset?: number
             className='absolute bg-ui-background h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-b border-neutral-500/[0.2]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between'
             style={{
               transformOrigin: 'top center',
+              fontSize: '1.2rem', // increase font size for accessibility
+              marginTop: '0.5rem',
             }}
             animate={{
               top: index * -CARD_OFFSET,
@@ -52,6 +54,7 @@ const CardStack = ({items, offset, scaleFactor}: {items: Card[]; offset?: number
               <a href={card.link} className='font-medium text-ui-text-neutral'>
                 {card.name}
               </a>
+
               {/* <p className='font-normal text-ui-text-neutral'>{card.link}</p> */}
             </div>
           </motion.div>

@@ -136,10 +136,12 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
         {setAnimationOn && (
           <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200 text-ui-text' onClick={() => setAnimationOn(!isAnimationOn)}>
             <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
+            <span className='sr-only'>{isAnimationOn ? 'Disable Animation' : 'Enable Animation'}</span>
           </button>
         )}
         <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={() => setDarkMode(!darkMode)}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
+          <span className='sr-only'>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
         </button>
       </Menu>
     </div>
