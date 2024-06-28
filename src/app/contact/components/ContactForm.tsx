@@ -27,7 +27,7 @@ export default function ContactForm() {
     e.currentTarget.reset()
   }
   return (
-    <div className='max-w-md w-full mx-auto rounded-2xl p-4 shadow-input border-2 border-ui-border bg-ui-background'>
+    <div className='max-w-md rounded-2xl p-4 shadow-input border-2 border-ui-border bg-ui-background'>
       <h2 className='font-bold text-xl text-ui-neutral'>Feedback (WIP!)</h2>
       <p className='text-ui-neutral text-sm max-w-sm mt-2'>Use this if you have any feedback or just want to get in touch.</p>
 

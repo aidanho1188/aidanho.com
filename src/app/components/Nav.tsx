@@ -100,30 +100,24 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
       <Menu setActive={setActive}>
         <Link href='/home' className='fixed left-10  cursor-pointer text-ui-text'>
-          <i className='fas fa-home font-bold font-i text-xl'>AH</i>
+          <i className='fas fa-home font-bold font-i text-xl' aria-label='Home'>
+            AH
+          </i>
         </Link>
         <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Home
+          <span aria-label='Home'>Home</span>
         </Link>
         <Link href='/about' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          About
+          <span aria-label='About'>About</span>
         </Link>
         <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Arts
+          <span aria-label='Arts'>Arts</span>
         </Link>
         <Link href='/projects' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Projects
+          <span aria-label='Projects'>Projects</span>
         </Link>
-        {/* <MenuItem setActive={setActive} active={active} item='Projects'>
-          <div className='flex flex-col space-y-4 text-sm'>
-            <HoveredLink href='/hobby'>Hobby</HoveredLink>
-            <HoveredLink href='/individual'>Individual</HoveredLink>
-            <HoveredLink href='/team'>Team</HoveredLink>
-            <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
-          </div>
-        </MenuItem> */}
         <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Contact
+          <span aria-label='Contact'>Contact</span>
         </Link>
         {/* <MenuItem setActive={setActive} active={active} item='Contact'>
           <div className='flex flex-col space-y-4 text-sm'>

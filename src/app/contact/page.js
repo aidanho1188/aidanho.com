@@ -38,7 +38,8 @@ export default function Contact() {
               Discord:{' '}
               <a href='https://discord.com/users/1172334442702983202' target='_blank' aria-label='Discord Profile'>
                 aidanho23657
-              </a>8
+              </a>
+              8
             </p>
             <p className='m-5'>Feel free to reach out to me if you have any questions or would like to collaborate on a project including art projects, web development, or anything else!</p>
           </div>

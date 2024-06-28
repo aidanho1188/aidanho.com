@@ -8,17 +8,18 @@
 }
 
 .left {
-  width: 50vw;
+  width: 28rem;
+  margin: 0 auto;
 }
 
 .right {
-  width: 50vw;
   height: 100%;
   border: 2px solid var(--ui-border-color);
-  border-radius: 1rem;
   background-color: var(--ui-background-color);
-  margin: 0 auto;
-  max-width: 768px;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-width: 2px;
+  width: 28rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -26,6 +27,9 @@
     flex-direction: column;
   }
 
+  .left {
+    width: 100%;
+  }
   .right {
     width: 100%;
   }
