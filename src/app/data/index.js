@@ -1,5 +1,3 @@
-import exp from 'constants'
-
 export {default as skills} from './skills'
 export {default as quote} from './quote'
 export {default as highlightProjects} from './highlightProjects'
@@ -7,4 +5,3 @@ export {default as experiences} from './experiences'
 export {default as education} from './education'
 export {default as projects} from './projects'
 export {default as contact} from './contact'
-export {default as currentProjects} from './currentProjects'
