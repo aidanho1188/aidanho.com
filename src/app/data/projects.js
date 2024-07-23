@@ -43,7 +43,7 @@ const projects = [
     id: 6,
     title: 'Zorkington V2',
     description: 'Zorkington V2 is a text-based adventure game that I am building. It is a continuation of the original Zorkington game that I built during my time at Upright Education. I am building this game to learn more about game development and to improve my programming skills. I am using JavaScript and Node.js to build this game. I am also using Git and GitHub to manage the project and deploy it to a static webpage.',
-    duration: 'July 2024 - Present',
+    duration: 'June 2024 - July 2024',
     link: 'https://uprighted-learners.github.io/zorkington-aidanho1188/',
     currentProjects: true,
   },
