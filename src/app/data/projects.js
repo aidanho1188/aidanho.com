@@ -42,9 +42,17 @@ const projects = [
   {
     id: 6,
     title: 'Zorkington V2',
-    description: 'Zorkington V2 is a text-based adventure game that I am building. It is a continuation of the original Zorkington game that I built during my time at Upright Education. I am building this game to learn more about game development and to improve my programming skills. I am using JavaScript and Node.js to build this game. I am also using Git and GitHub to manage the project and deploy it to a static webpage.',
+    description: 'Zorkington V2 is a text-based adventure game that I am building. It is a continuation of the original Zorkington game that I built during my time at Upright Education. I am building this game to learn more about unit testing using Cypress. This version 2 also let users play the game in the browser. ',
     duration: 'June 2024 - July 2024',
     link: 'https://uprighted-learners.github.io/zorkington-aidanho1188/',
+    currentProjects: false,
+  },
+  {
+    id: 7,
+    title: 'Markdown2Zoho',
+    description: 'Markdown2Zoho is a tool that I am building to convert Markdown files to Zoho Html format. This Html format will be sent to Zoho Webhooks to create a new note in Zoho Notebook. I am building this tool to help me migrate my notes from Obsidian to Zoho Notebook.',
+    duration: 'July 2024 - Present',
+    link: 'https://github.com/aidanho1188/Markdown2Zoho',
     currentProjects: true,
   },
 ]
