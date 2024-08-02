@@ -26,6 +26,12 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
+    // prevent scrolling when nav is open
+    if (navOpen) {
+      document.body.classList.remove('overflow-hidden')
+    } else {
+      document.body.classList.add('overflow-hidden')
+    }
   }
 
   useEffect(() => {
@@ -45,7 +51,7 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
     <div ref={navRef} className={cn('fixed top-0 right-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
       <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} />
       {/* Add Tailwind animation */}
-      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background-wo text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
+      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
         <div className='flex justify-end'>
           <FontAwesomeIcon icon={faX} size='xl' className='p-4 mt-2 mr-[1.08rem] rounded-sm bg-transparent text-gray-400 cursor-pointer' onClick={toggleNav} />
         </div>
