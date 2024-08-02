@@ -26,11 +26,11 @@ export default function Home() {
           <Skills data={data} />
           <Seperator />
 
-          <Header title={'Experiences'} />
+          <Header title={'Experience'} />
           <Experiences data={data.experiences} />
           <Seperator />
 
-          <Header title={'Educations'} />
+          <Header title={'Education'} />
           <InfoSection data={data.education} />
           <Seperator />
 
