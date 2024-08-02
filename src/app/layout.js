@@ -5,6 +5,9 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import React from 'react'
 import {metadata} from './metadata'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const inter = Inter({subsets: ['latin']})
 
 export default function RootLayout({children}) {
@@ -22,7 +25,10 @@ export default function RootLayout({children}) {
         <title>{metadata.title}</title>
         <meta name='description' content={metadata.description} />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <ToastContainer />
+      </body>
     </html>
   )
 }

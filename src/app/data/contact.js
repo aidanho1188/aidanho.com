@@ -14,6 +14,11 @@ const contact = [
     name: 'GitHub',
     address: 'https://github.com/aidanho1188',
   },
+  {
+    id: 4,
+    name: 'Discord',
+    address: 'aidanho23657',
+  },
 ]
 
 export default contact

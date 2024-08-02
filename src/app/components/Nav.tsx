@@ -26,6 +26,12 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
+    // prevent scrolling when nav is open
+    if (navOpen) {
+      document.body.classList.remove('overflow-hidden')
+    } else {
+      document.body.classList.add('overflow-hidden')
+    }
   }
 
   useEffect(() => {
@@ -45,7 +51,7 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
     <div ref={navRef} className={cn('fixed top-0 right-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
       <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} />
       {/* Add Tailwind animation */}
-      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background-wo text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
+      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
         <div className='flex justify-end'>
           <FontAwesomeIcon icon={faX} size='xl' className='p-4 mt-2 mr-[1.08rem] rounded-sm bg-transparent text-gray-400 cursor-pointer' onClick={toggleNav} />
         </div>
@@ -100,40 +106,42 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
       <Menu setActive={setActive}>
         <Link href='/home' className='fixed left-10  cursor-pointer text-ui-text'>
-          <i className='fas fa-home font-bold font-i text-xl'>AH</i>
+          <i className='fas fa-home font-bold font-i text-xl' aria-label='Home'>
+            AH
+          </i>
         </Link>
         <Link href='/home' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Home
+          <span aria-label='Home'>Home</span>
         </Link>
         <Link href='/about' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          About
+          <span aria-label='About'>About</span>
         </Link>
         <Link href='/arts' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
-          Arts
+          <span aria-label='Arts'>Arts</span>
         </Link>
-        <MenuItem setActive={setActive} active={active} item='Projects'>
+        <Link href='/projects' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <span aria-label='Projects'>Projects</span>
+        </Link>
+        <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <span aria-label='Contact'>Contact</span>
+        </Link>
+        {/* <MenuItem setActive={setActive} active={active} item='Contact'>
           <div className='flex flex-col space-y-4 text-sm'>
             <HoveredLink href='/hobby'>Hobby</HoveredLink>
             <HoveredLink href='/individual'>Individual</HoveredLink>
             <HoveredLink href='/team'>Team</HoveredLink>
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item='Contact'>
-          <div className='flex flex-col space-y-4 text-sm'>
-            <HoveredLink href='/hobby'>Hobby</HoveredLink>
-            <HoveredLink href='/individual'>Individual</HoveredLink>
-            <HoveredLink href='/team'>Team</HoveredLink>
-            <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
+        </MenuItem> */}
         {setAnimationOn && (
           <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200 text-ui-text' onClick={() => setAnimationOn(!isAnimationOn)}>
             <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
+            <span className='sr-only'>{isAnimationOn ? 'Disable Animation' : 'Enable Animation'}</span>
           </button>
         )}
         <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={() => setDarkMode(!darkMode)}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
+          <span className='sr-only'>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
         </button>
       </Menu>
     </div>

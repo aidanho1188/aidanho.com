@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left {
+  width: 28rem;
+  margin: 0 auto;
+}
+
+.right {
+  height: 100%;
+  border: 2px solid var(--ui-border-color);
+  background-color: var(--ui-background-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  border-width: 2px;
+  width: 28rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+}
