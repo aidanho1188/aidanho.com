@@ -1,9 +1,9 @@
 .container {
-  height: 90vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1rem;
+  margin-top: 5rem;
 }
 
 .hero-left {
