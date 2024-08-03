@@ -25,7 +25,7 @@ const skills = [
     experience: '1 year',
   },
   {
-    id: 1,
+    id: 6,
     name: 'Html/CSS',
     experience: '1 year',
   },

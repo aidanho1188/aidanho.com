@@ -22,34 +22,32 @@ export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn
 
 function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
   const [navOpen, setNavOpen] = useState(false)
-  const navRef = useRef(null)
+  const [active, setActive] = useState<string | null>(null)
 
-  const toggleNav = () => {
+  const handleToggle = () => {
     setNavOpen(!navOpen)
   }
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setNavOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
-
   return (
-    <div ref={navRef} className={cn('fixed top-0 right-0 w-fit h-full mx-auto z-50 border-b border-neutral-500/[0.2] p-4 m-2', className)}>
-      <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} />
-      {/* Add Tailwind animation */}
-      <div className={`fixed top-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background-wo text-ui-text ${navOpen ? 'slide-out' : 'slide-in'}`}>
-        <div className='flex justify-end'>
-          <FontAwesomeIcon icon={faX} size='xl' className='p-4 mt-2 mr-[1.08rem] rounded-sm bg-transparent text-gray-400 cursor-pointer' onClick={toggleNav} />
-        </div>
-        <nav className='fixed mt-8 w-full h-full flex flex-col overflow-auto scrollbar-hide'>
+    <div className={cn('flex flex-col top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
+      {/* <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} /> */}
+
+      <div className='menu-container'>
+        <Menu setActive={setActive}>
+          <Link href='/home' className='fixed top-8 left-10 cursor-pointer text-ui-text'>
+            <i className='fas fa-home font-bold font-i text-xl' aria-label='Home'>
+              AH
+            </i>
+          </Link>
+          <button className={`toggle-button mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer ${navOpen ? 'active' : ''}`} id='toggleButton' aria-label='Toggle Menu' onClick={handleToggle}>
+            <span className='bar'></span>
+            <span className='bar'></span>
+            <span className='bar'></span>
+          </button>
+        </Menu>
+      </div>
+      <div className={`fixed bottom-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background-wo text-ui-text ${!navOpen ? 'slide-in' : 'slide-out'}`}>
+        <nav className='fixed mt-32 w-full h-full flex flex-col overflow-auto scrollbar-hide'>
           <Link href='/home' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
             Home
           </Link>
