@@ -26,12 +26,6 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   const handleToggle = () => {
     setNavOpen(!navOpen)
-    // prevent scrolling when nav is open
-    if (navOpen) {
-      document.body.classList.remove('overflow-hidden')
-    } else {
-      document.body.classList.add('overflow-hidden')
-    }
   }
 
   return (
@@ -50,21 +44,21 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
           </button>
         </Menu>
       </div>
-      <div className={`fixed bottom-0 right-0 z-50 h-full w-[100%] flex flex-col space-y-12 bg-ui-background-wo text-ui-text ${!navOpen ? 'slide-in' : 'slide-out'}`}>
-        <nav className='fixed mt-32 w-full h-full flex flex-col overflow-auto scrollbar-hide'>
-          <Link href='/home' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+      <div className={`fixed bottom-0 right-0 z-50 h-full w-full flex flex-col items-center space-y-12 bg-background-color text-ui-text ${!navOpen ? 'slide-in' : 'slide-out'}`}>
+        <nav className='mobile-bar'>
+          <Link href='/home' className='mobile-bar-link'>
             Home
           </Link>
-          <Link href='/about' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+          <Link href='/about' className='mobile-bar-link'>
             About
           </Link>
-          <Link href='/arts' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+          <Link href='/arts' className='mobile-bar-link'>
             Arts
           </Link>
-          <Link href='/projects' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+          <Link href='/projects' className='mobile-bar-link'>
             Projects
           </Link>
-          <Link href='/contact' className='px-12 py-4 cursor-pointer text-ui-text hover:opacity-[0.5]'>
+          <Link href='/contact' className='mobile-bar-link'>
             Contact
           </Link>
         </nav>

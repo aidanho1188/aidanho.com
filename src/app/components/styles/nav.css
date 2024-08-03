@@ -1,3 +1,29 @@
+.mobile-bar {
+  position: fixed;
+  margin-top: 8rem;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.mobile-bar-link {
+  display: block;
+  left: 50%;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  color: var(--ui-text);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  transition: opacity 0.2s;
+}
+
+.mobile-bar-link:hover {
+  opacity: 0.5;
+}
+
 .menu-container {
   position: fixed;
   top: 0;

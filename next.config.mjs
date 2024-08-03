@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'api.microlink.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'media1.giphy.com',
+      },
     ],
   },
 }
