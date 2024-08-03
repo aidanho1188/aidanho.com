@@ -30,8 +30,6 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   return (
     <div className={cn('flex flex-col top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
-      {/* <FontAwesomeIcon icon={faNavicon} size='xl' className='mx-2 rounded-sm bg-transparent transition duration-200 text-gray-400 cursor-pointer' onClick={toggleNav} /> */}
-
       <div className='menu-container'>
         <Menu setActive={setActive}>
           <Link href='/home' className='fixed top-8 left-10 cursor-pointer text-ui-text'>
