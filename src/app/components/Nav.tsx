@@ -26,6 +26,12 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
 
   const handleToggle = () => {
     setNavOpen(!navOpen)
+    // prevent scrolling when nav is open
+    if (navOpen) {
+      document.body.classList.remove('overflow-hidden')
+    } else {
+      document.body.classList.add('overflow-hidden')
+    }
   }
 
   return (

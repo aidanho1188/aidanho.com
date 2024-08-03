@@ -53,7 +53,7 @@ const projects = [
     description: 'Markdown2Zoho is a tool that I am building to convert Markdown files to Zoho Html format. This Html format will be sent to Zoho Webhooks to create a new note in Zoho Notebook. I am building this tool to help me migrate my notes from Obsidian to Zoho Notebook.',
     duration: 'July 2024 - Present',
     link: 'https://github.com/aidanho1188/Markdown2Zoho',
-    currentProjects: true,
+    currentProjects: false,
   },
 ]
 
