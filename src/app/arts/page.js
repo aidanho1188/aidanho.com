@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Meteors from './components/Meteors'
 import Stars from './components/Stars'
 import Trees from './components/Trees'
+import Background from './components/Background'
 import NavMenu from '../components/Nav'
 import Image from 'next/image'
 import {LinkPreview} from '../components/ui/link-preview'
@@ -17,8 +18,7 @@ export default function Arts() {
   return (
     <main className='h-full w-full bg-art-background flex min-h-screen flex-col items-center justify-start'>
       <Meteors number={10} isAnimationOn={isAnimationOn} />
-      <Stars number={400} seed='fixed-seed' />
-      <Trees />
+      <Background />
 
       <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />

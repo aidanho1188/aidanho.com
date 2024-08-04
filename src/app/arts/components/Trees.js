@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import {useEventListener} from '../hooks/useEventListener'
 
 // Trees from https://codepen.io/MinzCode/pen/YzpbyzK
 
@@ -12,9 +13,10 @@ export default function Trees() {
     ctx = canvas.getContext('2d')
     resizeReset()
     animationLoop()
+    addTree()
   }
 
-  function addTree(x, y, l, h) {
+  const addTree = (x, y, l, h) => {
     trees.push(new Tree(x, y, l, h))
   }
 
@@ -22,13 +24,61 @@ export default function Trees() {
     w = canvas.width = window.innerWidth
     h = canvas.height = window.innerHeight
     trees = []
-    drawGround()
+    // drawBackground()
   }
 
-  function drawGround() {
-    ctx.fillStyle = `rgba(0, 0, 0, 1)`
-    ctx.fillRect(0, h - 55, w, h)
-  }
+  // function drawBackground() {
+  //   const backgroundImage = new Image()
+  //   const starsImage = new Image()
+  //   starsImage.src = '/images/arts/stars.png'
+  //   backgroundImage.src = '/images/arts/grass.png'
+  //   backgroundImage.onload = () => {
+  //     ctx.drawImage(starsImage, 0, 0, w, h)
+  //     ctx.drawImage(backgroundImage, 0, 0, w, h)
+  //   }
+  // }
+
+  // function drawGround() {
+  //   ctx.fillStyle = `rgba(0, 0, 0, 1)`
+  //   ctx.fillRect(0, h - 55, w, h)
+  //   drawGrass()
+  // }
+
+  // function drawGrass() {
+  //   const numLines = 5000
+  //   const baseY = h - 55
+
+  //   ctx.save() // Save the current context state
+  //   for (let i = 0; i < numLines; i++) {
+  //     const angle = Math.random() * 90 * (Math.PI / 180) // Calculate the angle in radians between 0 and 90 degrees
+  //     const lineLength = 10 + Math.random() * 20
+  //     const x = (w / numLines) * i // X-coordinate for each line
+
+  //     ctx.save() // Save the current context state
+  //     ctx.translate(x, baseY) // Move the origin to the base of the line
+  //     ctx.rotate(angle) // Rotate the context
+
+  //     ctx.beginPath()
+  //     ctx.moveTo(0, 0) // Start at the origin
+  //     ctx.lineTo(0, -lineLength) // Draw the line upwards
+  //     ctx.strokeStyle = 'rgba(0, 0, 0, 1)' // Line color
+  //     ctx.stroke()
+
+  //     ctx.restore() // Restore the context to its original state
+  //   }
+  //   ctx.restore() // Restore the context to its original state
+
+  //     const dataURL = canvas.toDataURL('image/png')
+  // console.log(dataURL) // Log the data URL to the console
+
+  // Create a download link
+  // const link = document.createElement('a')
+  // link.href = dataURL
+  // link.download = 'grass.png' // Set the download file name
+  // document.body.appendChild(link) // Append the link to the body
+  // link.click() // Programmatically click the link to trigger the download
+  // document.body.removeChild(link) // Remove the link from the body
+  // }
 
   function animationLoop() {
     drawScene()
@@ -128,7 +178,6 @@ export default function Trees() {
 
   useEffect(() => {
     init()
-    addTree()
     let addedTrees = false
 
     const onScroll = () => {
@@ -163,9 +212,5 @@ export default function Trees() {
     }
   }, [])
 
-  return (
-    <div>
-      <canvas id='canvas'></canvas>
-    </div>
-  )
+  useEventListener('resize', init)
 }

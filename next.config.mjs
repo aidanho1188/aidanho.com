@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, {dev}) => {
-    if (dev) {
-      config.devtool = 'eval-source-map'
-    } else {
-      config.devtool = false
-    }
-    return config
-  },
   images: {
     remotePatterns: [
       {
