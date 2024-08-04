@@ -3,15 +3,14 @@ import {Inter} from 'next/font/google'
 import './globals.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import React from 'react'
+import {useEffect} from 'react'
 import {metadata} from './metadata'
 import {ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({subsets: ['latin']})
 
 export default function RootLayout({children}) {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',
