@@ -1,9 +1,9 @@
 'use client'
 import React, {useEffect} from 'react'
 import Footer from '../components/Footer'
-import Meteors from '../components/ui/Meteors'
-import Stars from '../components/ui/Stars'
-import Trees from '../components/ui/Trees'
+import Meteors from './components/Meteors'
+import Stars from './components/Stars'
+import Trees from './components/Trees'
 import NavMenu from '../components/Nav'
 import Image from 'next/image'
 import {LinkPreview} from '../components/ui/link-preview'
@@ -17,8 +17,7 @@ export default function Arts() {
   return (
     <main className='h-full w-full bg-art-background flex min-h-screen flex-col items-center justify-start'>
       <Meteors number={10} isAnimationOn={isAnimationOn} />
-      <Stars number={400} isAnimationOn={false} />
-      <Stars number={100} isAnimationOn={isAnimationOn} />
+      <Stars number={400} seed='fixed-seed' />
       <Trees />
 
       <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />

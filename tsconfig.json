@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx", 
-    "src/app/components/ui/Trees.js", "src/app/components/Nav.tsx", "src/app/projects/components/CardHoverEffect.js"  ],
+    "src/app/arts/components/Trees.js", "src/app/components/Nav.tsx", "src/app/projects/components/CardHoverEffect.js"  ],
   "exclude": [
     "node_modules"
   ]
