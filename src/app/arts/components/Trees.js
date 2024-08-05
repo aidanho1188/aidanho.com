@@ -93,13 +93,17 @@ export default function Trees() {
   }
 
   function getRandomInt(min, max) {
+    if (window.innerHeight < 500) {
+      min = 5
+      max = 6
+    }
     return Math.round(Math.random() * (max - min)) + min
   }
 
   class Tree {
-    constructor(x = window.innerWidth * 0.5, y = window.innerHeight - 50, l = 7, h = 7) {
+    constructor(x = window.innerWidth * 0.5, y, l = 7, h = 7) {
       this.x = x
-      this.y = y
+      this.y = window.innerHeight - window.innerHeight / 10 + 10 // scale the tree height to the window height
       this.branchs = []
       this.addBranch(this.x, this.y, getRandomInt(l, h), 180)
     }
