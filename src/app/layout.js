@@ -5,7 +5,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {useEffect} from 'react'
 import {metadata} from './metadata'
-import {ToastContainer} from 'react-toastify'
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({subsets: ['latin']})
 

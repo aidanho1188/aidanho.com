@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import {useEventListener} from '../hooks/useEventListener'
 
 // Trees from https://codepen.io/MinzCode/pen/YzpbyzK
@@ -103,7 +103,7 @@ export default function Trees() {
   class Tree {
     constructor(x = window.innerWidth * 0.5, y, l = 7, h = 7) {
       this.x = x
-      this.y = window.innerHeight - window.innerHeight / 10 + 10 // scale the tree height to the window height
+      this.y = window.innerHeight - window.innerHeight / 10 + 40
       this.branchs = []
       this.addBranch(this.x, this.y, getRandomInt(l, h), 180)
     }
@@ -180,10 +180,10 @@ export default function Trees() {
     }
   }
 
+  const [addedTrees, setAddedTrees] = useState(false)
+
   useEffect(() => {
     init()
-    let addedTrees = false
-
     const onScroll = () => {
       let documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight)
       let scrollableHeight = documentHeight - window.innerHeight
@@ -199,9 +199,9 @@ export default function Trees() {
         addTree(x2, window.innerHeight - 50, 4, 6)
         addTree(x3, window.innerHeight - 50, 4, 6)
 
-        addedTrees = true
+        setAddedTrees(true)
       } else if (scrollPercent % 50 !== 0) {
-        addedTrees = false
+        setAddedTrees(true)
       }
 
       if (scrollPercent >= 100) {
