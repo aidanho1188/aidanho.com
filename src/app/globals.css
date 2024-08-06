@@ -24,6 +24,7 @@
   --bg-color: rgb(250, 250, 250);
   --bg-color-wo: rgba(238, 238, 219, 0.6);
   --seperator-color: rgb(27, 27, 27, 0.5);
+  --meteros-color: rgb(250, 250, 250);
 }
 
 .dark-mode {
@@ -38,6 +39,7 @@
   --bg-color: rgb(2, 0, 24);
   --bg-color-wo: rgba(4, 0, 48, 0.6);
   --seperator-color: rgb(245, 245, 245, 0.5);
+  --meteros-color: rgb(250, 250, 250);
 }
 
 body {

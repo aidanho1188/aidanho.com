@@ -7,20 +7,20 @@ import {faNavicon, faMagic, faMagicWandSparkles, faMoon, faSun, faX} from '@fort
 import Link from 'next/link'
 import './styles/nav.css'
 
-export default function NavMenu({setAnimationOn, isAnimationOn}: {setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
+export default function NavMenu() {
   return (
     <div className='relative w-full flex items-center justify-center'>
       <div className='block md:hidden'>
-        <MobileNavbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+        <MobileNavbar />
       </div>
       <div className='hidden md:block'>
-        <Navbar setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+        <Navbar />
       </div>
     </div>
   )
 }
 
-function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
+function MobileNavbar({className}: {className?: string}) {
   const [navOpen, setNavOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
 
@@ -67,28 +67,24 @@ function MobileNavbar({className, setAnimationOn, isAnimationOn}: {className?: s
   )
 }
 
-function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string; setAnimationOn: (value: boolean) => void; isAnimationOn: boolean}) {
+function Navbar({className}: {className?: string}) {
   const [active, setActive] = useState<string | null>(null)
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedMode = window.localStorage.getItem('darkMode')
-      if (savedMode) {
-        return JSON.parse(savedMode)
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-    }
-    return true
-  })
+  const [isAnimationOn, setAnimationOn] = useState(false) // Default value matching server-rendered HTML
+  const [darkMode, setDarkMode] = useState(false) // Default value matching server-rendered HTML
 
   useEffect(() => {
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true'
+    setDarkMode(savedDarkMode)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', [!darkMode].toString())
     if (darkMode) {
       document.body.classList.add('dark-mode')
       document.body.classList.remove('light-mode')
-      window.localStorage.setItem('darkMode', JSON.stringify(true))
     } else {
       document.body.classList.add('light-mode')
       document.body.classList.remove('dark-mode')
-      window.localStorage.setItem('darkMode', JSON.stringify(false))
     }
   }, [darkMode])
 
@@ -123,12 +119,6 @@ function Navbar({className, setAnimationOn, isAnimationOn}: {className?: string;
             <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
           </div>
         </MenuItem> */}
-        {setAnimationOn && (
-          <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200 text-ui-text' onClick={() => setAnimationOn(!isAnimationOn)}>
-            <FontAwesomeIcon icon={isAnimationOn ? faMagic : faMagicWandSparkles} size='xs' />
-            <span className='sr-only'>{isAnimationOn ? 'Disable Animation' : 'Enable Animation'}</span>
-          </button>
-        )}
         <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={() => setDarkMode(!darkMode)}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
           <span className='sr-only'>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>

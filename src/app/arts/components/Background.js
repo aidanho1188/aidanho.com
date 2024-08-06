@@ -18,10 +18,10 @@ export default function Background() {
     function resizeCanvas() {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      drawBackground(ctx)
+      drawBackground()
     }
 
-    function drawBackground(ctx) {
+    function drawBackground() {
       const backgroundImage = new Image()
       const starsImage = new Image()
       starsImage.src = '/images/arts/stars.png'
@@ -31,9 +31,9 @@ export default function Background() {
         const pattern = ctx.createPattern(starsImage, 'repeat')
         ctx.fillStyle = pattern
         ctx.fillRect(0, 0, canvas.width, canvas.height)
-      }
-      backgroundImage.onload = () => {
-        ctx.drawImage(backgroundImage, 0, 0, canvas.width, window.innerHeight)
+        backgroundImage.onload = () => {
+          ctx.drawImage(backgroundImage, 0, 0, canvas.width, window.innerHeight)
+        }
       }
     }
 

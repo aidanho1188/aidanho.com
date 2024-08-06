@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Footer from '../components/Footer'
 import Meteors from './components/Meteors'
 import Stars from './components/Stars'
@@ -13,14 +13,13 @@ import './style.css'
 
 export default function Arts() {
   const currentYear = new Date().getFullYear()
-  const [isAnimationOn, setAnimationOn] = React.useState(true)
 
   return (
     <main className='h-full w-full bg-art-background flex min-h-screen flex-col items-center justify-start'>
-      <Meteors number={10} isAnimationOn={isAnimationOn} />
+      <Meteors number={10} isAnimationOn={true} />
       <Background />
 
-      <NavMenu setAnimationOn={setAnimationOn} isAnimationOn={isAnimationOn} />
+      <NavMenu />
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       <div className='bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>

@@ -19,6 +19,7 @@ module.exports = {
         'ui-neutral': 'var(--ui-text-neutral)',
         'background-color': 'var(--bg-color)',
         'background-color-wo': 'var(--bg-color-wo)',
+        'meteors-color': 'var(--meteors-color)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
