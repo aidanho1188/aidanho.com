@@ -16,6 +16,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
@@ -26,8 +35,11 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx", 
-    "src/app/arts/components/Trees.js", "src/app/components/Nav.tsx", "src/app/projects/components/CardHoverEffect.js"  ],
+    "**/*.tsx",
+    "src/app/arts/components/Trees.js",
+    "src/app/components/Nav.tsx",
+    "src/app/projects/components/CardHoverEffect.js"
+  ],
   "exclude": [
     "node_modules"
   ]

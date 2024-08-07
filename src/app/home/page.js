@@ -1,7 +1,6 @@
 'use client'
 import React, {useRef, useEffect} from 'react'
 import * as data from '../data'
-import NavMenu from '../components/Nav'
 import Background from '../components/Background'
 import HeroSection from './components/HeroSection'
 import Skills from './components/Skills'
@@ -15,8 +14,7 @@ import Seperator from '../components/Seperator'
 export default function Home() {
   const contentsRef = useRef(null)
   return (
-    <main>
-      <NavMenu />
+    <>
       <Background />
       <div className='h-inherit flex flex-col z-10'>
         <HeroSection data={data} contentsRef={contentsRef} />
@@ -38,7 +36,6 @@ export default function Home() {
           <Projects data={data.projects} />
         </div>
       </div>
-      <Footer />
-    </main>
+    </>
   )
 }

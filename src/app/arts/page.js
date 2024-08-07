@@ -15,11 +15,11 @@ export default function Arts() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <main className='h-full w-full bg-art-background flex min-h-screen flex-col items-center justify-start'>
+    <div className='art-layout'>
       <Meteors number={10} isAnimationOn={true} />
       <Background />
 
-      <NavMenu />
+      {/* Empty Banner */}
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       <div className='bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>
@@ -36,8 +36,7 @@ export default function Arts() {
           </div>
         ))}
       </div>
-      <Footer />
-    </main>
+    </div>
   )
 }
 

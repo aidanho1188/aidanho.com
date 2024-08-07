@@ -6,10 +6,9 @@ import {LinkPreview} from '../components/ui/link-preview'
 
 export default function About() {
   return (
-    <main>
-      <NavMenu />
+    <>
       <StickyScroll content={content} />
-    </main>
+    </>
   )
 }
 

@@ -6,8 +6,7 @@ import styles from './styles/ContactSection.module.css'
 
 export default function Contact() {
   return (
-    <main>
-      <NavMenu />
+    <>
       <Background />
       <div className='h-inherit flex flex-col z-10 mt-20 mb-20'>
         <h2 className='text-center text-3xl font-bold m-5'>Contact</h2>
@@ -45,7 +44,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Footer />
-    </main>
+    </>
   )
 }

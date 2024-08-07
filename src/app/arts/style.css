@@ -6,3 +6,12 @@
   height: 100vh;
   z-index: 0;
 }
+
+.art-layout {
+  background: linear-gradient(to bottom, var(--background-start-color), var(--background-end-color));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

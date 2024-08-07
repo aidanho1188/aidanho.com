@@ -4,44 +4,18 @@ import React, {useState, useEffect} from 'react'
 import {HoveredLink, Menu, MenuItem} from './ui/navbar-menu'
 import {cn} from '../utils/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faNavicon, faMoon, faSun, faX} from '@fortawesome/free-solid-svg-icons'
+import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import './styles/nav.css'
 
 export default function NavMenu() {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const storedDarkMode = localStorage.getItem('darkMode')
-      if (storedDarkMode !== null) {
-        return JSON.parse(storedDarkMode)
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-    }
-    return false
-  })
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark-mode')
-      document.documentElement.classList.remove('light-mode')
-    } else {
-      document.documentElement.classList.add('light-mode')
-      document.documentElement.classList.remove('dark-mode')
-    }
-    localStorage.setItem('darkMode', JSON.stringify(darkMode))
-  }, [darkMode])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
   return (
     <div className='relative w-full flex items-center justify-center'>
       <div className='block md:hidden'>
         <MobileNavbar />
       </div>
       <div className='hidden md:block'>
-        <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <Navbar />
       </div>
     </div>
   )
@@ -94,8 +68,39 @@ function MobileNavbar({className}: {className?: string}) {
   )
 }
 
-function Navbar({className, toggleDarkMode, darkMode}: {className?: string; toggleDarkMode: () => void; darkMode: boolean}) {
+function Navbar({className}: {className?: string}) {
   const [active, setActive] = useState<string | null>(null)
+  const [darkMode, setDarkMode] = useState<boolean | null>()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let cachedDarkMode = null
+      try {
+        cachedDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+      } catch (error) {
+        cachedDarkMode = true
+        console.error('Error:', error)
+      }
+      setDarkMode(cachedDarkMode)
+    }
+  }, [])
+
+  useEffect(() => {
+    const rootElement = window.document
+    if (darkMode) {
+      rootElement.documentElement.classList.add('dark-mode')
+      rootElement.documentElement.classList.remove('light-mode')
+    } else {
+      rootElement.documentElement.classList.add('light-mode')
+      rootElement.documentElement.classList.remove('dark-mode')
+    }
+    localStorage.setItem('darkMode', JSON.stringify(darkMode))
+    console.log('Dark Mode:', localStorage.getItem('darkMode'))
+  }, [darkMode])
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
 
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
@@ -120,15 +125,7 @@ function Navbar({className, toggleDarkMode, darkMode}: {className?: string; togg
         <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
           <span aria-label='Contact'>Contact</span>
         </Link>
-        {/* <MenuItem setActive={setActive} active={active} item='Contact'>
-          <div className='flex flex-col space-y-4 text-sm'>
-            <HoveredLink href='/hobby'>Hobby</HoveredLink>
-            <HoveredLink href='/individual'>Individual</HoveredLink>
-            <HoveredLink href='/team'>Team</HoveredLink>
-            <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
-          </div>
-        </MenuItem> */}
-        <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={() => toggleDarkMode()}>
+        <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={toggleDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
           <span className='sr-only'>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
         </button>
