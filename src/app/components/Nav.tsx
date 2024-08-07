@@ -8,14 +8,14 @@ import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import './styles/nav.css'
 
-export default function NavMenu() {
+export default function NavMenu({toggleDarkMode, darkMode}: {toggleDarkMode: () => void; darkMode: boolean}) {
   return (
     <div className='relative w-full flex items-center justify-center'>
       <div className='block md:hidden'>
         <MobileNavbar />
       </div>
       <div className='hidden md:block'>
-        <Navbar />
+        <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       </div>
     </div>
   )
@@ -68,39 +68,8 @@ function MobileNavbar({className}: {className?: string}) {
   )
 }
 
-function Navbar({className}: {className?: string}) {
+function Navbar({className, toggleDarkMode, darkMode}: {className?: string; toggleDarkMode: () => void; darkMode: boolean}) {
   const [active, setActive] = useState<string | null>(null)
-  const [darkMode, setDarkMode] = useState<boolean | null>()
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      let cachedDarkMode = null
-      try {
-        cachedDarkMode = JSON.parse(localStorage.getItem('darkMode'))
-      } catch (error) {
-        cachedDarkMode = true
-        console.error('Error:', error)
-      }
-      setDarkMode(cachedDarkMode)
-    }
-  }, [])
-
-  useEffect(() => {
-    const rootElement = window.document
-    if (darkMode) {
-      rootElement.documentElement.classList.add('dark-mode')
-      rootElement.documentElement.classList.remove('light-mode')
-    } else {
-      rootElement.documentElement.classList.add('light-mode')
-      rootElement.documentElement.classList.remove('dark-mode')
-    }
-    localStorage.setItem('darkMode', JSON.stringify(darkMode))
-    console.log('Dark Mode:', localStorage.getItem('darkMode'))
-  }, [darkMode])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
 
   return (
     <div className={cn('fixed top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>

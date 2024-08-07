@@ -20,6 +20,7 @@ export default function Arts() {
       <Background />
 
       {/* Empty Banner */}
+      {/* Maybe I can add something here? and a cue for scrolling for more content */}
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       <div className='bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>
