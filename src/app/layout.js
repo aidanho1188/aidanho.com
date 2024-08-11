@@ -5,8 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {useEffect, useState} from 'react'
 import {metadata} from './metadata'
-import {ToastContainer, toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import {toast, Toaster} from 'sonner'
 import NavMenu from './components/Nav'
 import Footer from './components/Footer'
 
@@ -26,17 +25,21 @@ export default function RootLayout({children}) {
   useEffect(() => {
     // first load
     let localDarkMode = ''
-    if (localStorage.getItem('darkMode') === null) {
-      localDarkMode = matchMedia('(prefers-color-scheme: dark)').matches
-    } else {
-      localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+    try {
+      if (localStorage.getItem('darkMode') === null) {
+        localDarkMode = matchMedia('(prefers-color-scheme: dark)').matches
+      } else {
+        localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+      }
+    } catch (error) {
+      throw new Error('Error getting dark mode preference')
     }
     if (localDarkMode) {
-      document.documentElement.classList.add('dark-mode')
-      document.documentElement.classList.remove('light-mode')
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
     } else {
-      document.documentElement.classList.remove('dark-mode')
-      document.documentElement.classList.add('light-mode')
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
     }
     localStorage.setItem('darkMode', localDarkMode)
     setDarkMode(localDarkMode)
@@ -47,27 +50,27 @@ export default function RootLayout({children}) {
     setDarkMode(localDarkMode)
     localStorage.setItem('darkMode', localDarkMode)
     if (localDarkMode) {
-      document.documentElement.classList.add('dark-mode')
-      document.documentElement.classList.remove('light-mode')
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
     } else {
-      document.documentElement.classList.remove('dark-mode')
-      document.documentElement.classList.add('light-mode')
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
     }
   }
 
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <title>{metadata.title}</title>
         <meta name='description' content={metadata.description} />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <main>
           <NavMenu toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
           {children}
           <Footer />
         </main>
-        <ToastContainer />
+        <Toaster />
       </body>
     </html>
   )

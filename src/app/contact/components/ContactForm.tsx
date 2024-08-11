@@ -3,7 +3,7 @@ import React from 'react'
 import {Label} from './label'
 import {Input} from './input'
 import {cn} from '../../utils/cn'
-import {toast} from 'react-toastify'
+import {toast} from 'sonner'
 
 export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -13,14 +13,16 @@ export default function ContactForm() {
     // TODO: Send message to backend
 
     // Show success notification
-    toast('Your message has been sent!', {
+    const promise = () => new Promise((resolve) => setTimeout(() => resolve({name: 'Sonner'}), 2000))
+
+    toast.promise(promise, {
+      loading: 'Loading...',
+      success: () => {
+        return `Your message has been sent!`
+      },
+      error: 'Error',
       position: 'bottom-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
+      duration: 5000,
     })
 
     // Clear form fields
