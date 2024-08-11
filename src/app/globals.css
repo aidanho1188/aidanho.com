@@ -29,7 +29,7 @@
   color-scheme: light;
 }
 
-.light-mode {
+.light {
   --foreground-rgb: 0, 0, 0;
   --background-start-color: #55a0cc;
   --background-end-color: #fababa;
@@ -46,7 +46,7 @@
   color-scheme: light;
 }
 
-.dark-mode {
+.dark {
   --foreground-rgb: 255, 255, 255;
   --background-start-color: #0a1020;
   --background-end-color: #8f0088;

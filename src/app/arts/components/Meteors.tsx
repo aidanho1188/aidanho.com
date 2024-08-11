@@ -1,9 +1,34 @@
+import style from 'styled-jsx/style'
 import {cn} from '../../utils/cn'
-import clsx from 'clsx'
 import React from 'react'
+
+// Using seed to prevent server and client style mismatch between render
+const seedRandom = (seed: number) => {
+  let x = Math.sin(seed) * 10000
+  return x - Math.floor(x)
+}
+
+const generateStyle = (index: number, seed: number) => {
+  const random1 = seedRandom(seed + index)
+  const random2 = seedRandom(seed + index + 1)
+  const random3 = seedRandom(seed + index + 2)
+
+  const top = '-5px'
+  const left = `${Math.floor(random1 * 200 - 20) + index}vw`
+  const animationDelay = `${Math.floor(random2 * 20 + 2) + index}s`
+  const animationDuration = `${Math.floor(random3 * (10 - 5) + 10) + index}s`
+
+  return {
+    top,
+    left,
+    animationDelay,
+    animationDuration,
+  }
+}
 
 const Meteors = ({number, isAnimationOn, className}: {number?: number; isAnimationOn: boolean; className?: string}) => {
   const meteors = new Array(number || 20).fill(true)
+  const seed = 42
   return (
     <>
       {meteors.map((el, idx) => (
@@ -17,12 +42,7 @@ const Meteors = ({number, isAnimationOn, className}: {number?: number; isAnimati
             "before:content-[''] before:fixed before:top-1/2 before:transform before:-translate-y-[100%] before:w-[50px] before:h-[1px] before:bg-gradient-to-r before:from-[white] before:to-transparent",
             className,
           )}
-          style={{
-            top: -5,
-            left: Math.floor(Math.random() * 200 - 20) + 'vw',
-            animationDelay: Math.floor(Math.random() * 20 + 2) + 's',
-            animationDuration: Math.floor(Math.random() * (10 - 5) + 10) + 's',
-          }}
+          style={generateStyle(idx, seed)}
         ></span>
       ))}
     </>

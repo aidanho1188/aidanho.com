@@ -67,11 +67,11 @@ const content = [
       <>
         <div>
           Two of my best projects are the{' '}
-          <LinkPreview url='https://github.com/aidanho1188/ptsb-oct-23-capstone-team-2' className='font-bold'>
+          <LinkPreview url='https://github.com/aidanho1188/ptsb-oct-23-capstone-team-2' className='text-white font-bold'>
             Upright Education capstone project
           </LinkPreview>{' '}
           and the{' '}
-          <LinkPreview url='https://github.com/aidanho1188/rpn-calculator' className='font-bold'>
+          <LinkPreview url='https://github.com/aidanho1188/rpn-calculator' className='text-white font-bold'>
             RPN Calculator project
           </LinkPreview>
           .
@@ -80,11 +80,11 @@ const content = [
         <div>
           The Upright Education capstone project was a full-stack application built with a third-party API, Service Channel, which allowed our client to manage work orders from HomeDepot and manually update worker&apos;s status. I was selected to be the team lead for the capstone project because of my knowledge in computer science. Although I held the role of team lead for this project, I was fortunate to work with a team of leaders. Each member brought their unique leadership qualities to the
           table, contributing to our collective success. Throughout the project, we had to learn and adapt to many new tools on the fly, including the Vite framework, Shadcn, Jira, and the Service Channel API. Despite the challenges, we all excelled and leveraged these tools to our advantage. I want to give a shoutout to my teammates,{' '}
-          <LinkPreview url='https://www.linkedin.com/in/davidblumenshine' isStatic imageSrc='https://media.licdn.com/dms/image/D5603AQF9k3jwrPwmlw/profile-displayphoto-shrink_200_200/0/1701922608924?e=1724284800&v=beta&t=VisRc9B1OI6NLtouvhENl_DRzFi8sd1jFg6L-PszwFQ' className='font-bold'>
+          <LinkPreview url='https://www.linkedin.com/in/davidblumenshine' isStatic imageSrc='https://media.licdn.com/dms/image/D5603AQF9k3jwrPwmlw/profile-displayphoto-shrink_200_200/0/1701922608924?e=1724284800&v=beta&t=VisRc9B1OI6NLtouvhENl_DRzFi8sd1jFg6L-PszwFQ' className='text-white font-bold'>
             David Blumenshine
           </LinkPreview>{' '}
           and{' '}
-          <LinkPreview url='https://www.linkedin.com/in/daniela-watanabe-882361241' isStatic imageSrc='https://media.licdn.com/dms/image/D5603AQFLqT6ENewO3Q/profile-displayphoto-shrink_200_200/0/1678971977781?e=2147483647&v=beta&t=NBn2YdLsvvDwazqu63HKxfpSAqG2S1UzhSeBI_qqdJc' className='font-bold'>
+          <LinkPreview url='https://www.linkedin.com/in/daniela-watanabe-882361241' isStatic imageSrc='https://media.licdn.com/dms/image/D5603AQFLqT6ENewO3Q/profile-displayphoto-shrink_200_200/0/1678971977781?e=2147483647&v=beta&t=NBn2YdLsvvDwazqu63HKxfpSAqG2S1UzhSeBI_qqdJc' className='text-white font-bold'>
             Daniela Watanabe
           </LinkPreview>{' '}
           who stood by me and played an integral part in leading our team to success.
@@ -92,7 +92,7 @@ const content = [
         <br />
         <div>
           For the RPN Calculator project, I built a reverse polish notation calculator using Java while attending one of my favorite classes, &quot;The Art and Craft of Software Development&quot;, at USM. This class was taught by an inspirational professor,{' '}
-          <LinkPreview url='https://cs.usm.maine.edu/~houser/cos470/' isStatic imageSrc='https://usm.maine.edu/directories/wp-content/uploads/sites/49/2022/09/Houser_0.jpg' className='font-bold'>
+          <LinkPreview url='https://cs.usm.maine.edu/~houser/cos470/' isStatic imageSrc='https://usm.maine.edu/directories/wp-content/uploads/sites/49/2022/09/Houser_0.jpg' className='text-white font-bold'>
             Stephen Houser
           </LinkPreview>
           . We studied the amazing book &quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot;. This project was a great learning experience for me, it was the first time I put software development theory into practice. I learned a lot about software development best practices, such as writing clean code, using version control, and CI/CD. I also learned about the importance of testing and debugging.
