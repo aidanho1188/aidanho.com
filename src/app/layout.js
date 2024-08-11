@@ -25,10 +25,14 @@ export default function RootLayout({children}) {
   useEffect(() => {
     // first load
     let localDarkMode = ''
-    if (localStorage.getItem('darkMode') === null) {
-      localDarkMode = matchMedia('(prefers-color-scheme: dark)').matches
-    } else {
-      localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+    try {
+      if (localStorage.getItem('darkMode') === null) {
+        localDarkMode = matchMedia('(prefers-color-scheme: dark)').matches
+      } else {
+        localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+      }
+    } catch (error) {
+      throw new Error('Error getting dark mode preference')
     }
     if (localDarkMode) {
       document.documentElement.classList.add('dark')
@@ -55,12 +59,12 @@ export default function RootLayout({children}) {
   }
 
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <title>{metadata.title}</title>
         <meta name='description' content={metadata.description} />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <main>
           <NavMenu toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
           {children}
