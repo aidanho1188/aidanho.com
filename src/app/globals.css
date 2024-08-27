@@ -90,6 +90,7 @@ footer {
   padding: 1rem;
   border-top: 1px solid var(--bg-color);
   font-size: small;
+  z-index: 999999;
 }
 
 @layer utilities {

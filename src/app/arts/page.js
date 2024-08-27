@@ -26,9 +26,9 @@ export default function Arts() {
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       {/* Let make it more dynamic and use different cue for mobile and desktop */}
-      <ScrollDownIndicator contentsRef={contentsRef} color='white' />
+      <ScrollDownIndicator contentsRef={contentsRef} color='white'  />
 
-      <div ref={contentsRef} className='bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>
+      <div ref={contentsRef} className='art-content bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className='mb-10 px-2 w-full text-ui-text'>
             <h2 className='bg-background-color-wo rounded-full text-sm w-fit px-4 py-1 mb-4'>{item.badge}</h2>
