@@ -12,28 +12,48 @@ export default function Background() {
   }
 
   useEffect(() => {
-    const canvas = document.getElementById('canvas')
+    const canvas = document.getElementById('ground-canvas')
     const ctx = canvas.getContext('2d')
 
     function resizeCanvas() {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      drawBackground()
+      drawGround()
+      drawSky()
     }
 
-    function drawBackground() {
-      const backgroundImage = new Image()
+    function drawSky() {
+      const skyCanvas = document.getElementById('sky-canvas')
+      const skyCtx = skyCanvas.getContext('2d')
+
+      // Set canvas dimensions to match the window dimensions
+      skyCanvas.width = window.innerWidth
+      skyCanvas.height = window.innerHeight
+
       const starsImage = new Image()
       starsImage.src = '/images/arts/stars.png'
-      backgroundImage.src = '/images/arts/grass.png'
-
       starsImage.onload = () => {
-        const pattern = ctx.createPattern(starsImage, 'repeat')
-        ctx.fillStyle = pattern
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
-        backgroundImage.onload = () => {
-          ctx.drawImage(backgroundImage, 0, 0, canvas.width, window.innerHeight)
+        const pattern = skyCtx.createPattern(starsImage, 'repeat')
+        if (pattern) {
+          skyCtx.fillStyle = pattern
+          skyCtx.fillRect(0, 0, skyCanvas.width, skyCanvas.height)
+        } else {
+          console.error('Failed to create pattern')
         }
+      }
+
+      starsImage.onerror = () => {
+        console.error('Failed to load image')
+      }
+    }
+
+    function drawGround() {
+      const groundCanvas = document.getElementById('ground-canvas')
+      const groundCtx = groundCanvas.getContext('2d')
+      const groundImage = new Image()
+      groundImage.src = '/images/arts/grass.png'
+      groundImage.onload = () => {
+        groundCtx.drawImage(groundImage, 0, 0, groundCanvas.width, groundCanvas.height)
       }
     }
 
@@ -48,6 +68,8 @@ export default function Background() {
     <>
       <Trees />
       <canvas id='canvas'></canvas>
+      <canvas id='sky-canvas'></canvas>
+      <canvas id='ground-canvas'></canvas>
     </>
   )
 }

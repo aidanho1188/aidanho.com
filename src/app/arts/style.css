@@ -1,10 +1,20 @@
-#canvas {
+#canvas,
+#sky-canvas,
+#ground-canvas {
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: 1;
+}
+
+#ground-canvas {
+  z-index: 2 !important;
+}
+
+#sky-canvas {
+  z-index: 0 !important;
 }
 
 .art-layout {
@@ -14,4 +24,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.art-content {
+  z-index: 1;
 }

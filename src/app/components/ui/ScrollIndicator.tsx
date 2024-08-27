@@ -1,4 +1,5 @@
 import {FaChevronDown} from 'react-icons/fa'
+import '../styles/ScrollIndicator.css'
 
 export default function ScrollIndicator({contentsRef, color = 'ui-neutral'}) {
   const handleClick = () => {

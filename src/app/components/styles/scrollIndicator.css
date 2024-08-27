@@ -1,0 +1,9 @@
+.scroll-indicator {
+  z-index: 999999;
+}
+
+/* @media (max-width: 767px) {
+  .scroll-indicator {
+    display: none;
+  }
+} */
