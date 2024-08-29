@@ -1,5 +1,5 @@
 'use client'
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import * as data from '../data'
 import Background from '../components/Background'
 import HeroSection from './components/HeroSection'
@@ -10,9 +10,14 @@ import Projects from './components/Projects'
 import Footer from '../components/Footer'
 import Header from './components/Header'
 import Seperator from '../components/Seperator'
+import fetchProjects from '../services/fetchProjects'
 
 export default function Home() {
   const contentsRef = useRef(null)
+
+  useEffect(() => {
+    fetchProjects()
+  }, [])
   return (
     <>
       <Background />
