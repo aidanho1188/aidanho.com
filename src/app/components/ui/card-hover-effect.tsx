@@ -11,6 +11,8 @@ export const HoverEffect = ({
     title: string
     description: string
     link: string
+    createdAt: string
+    pushedAt: string
   }[]
   className?: string
 }) => {
