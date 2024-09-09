@@ -57,10 +57,10 @@ const projects = [
   },
   {
     id: 8,
-    title: 'Capstone Project',
+    title: 'Inside Unlimited',
     description: 'React application that connects to the Service Channel API to track and manage work orders for contractors.',
     duration: 'Feb 2024 - Apr 2024',
-    link: 'https://github.com/aidanho1188/ptsb-oct-23-capstone-team-2',
+    link: 'https://ptsb-oct-23-capstone-team-2.vercel.app/',
     currentProjects: false,
   },
 ]
