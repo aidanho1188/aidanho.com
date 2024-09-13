@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 import {HoveredLink, Menu, MenuItem} from './ui/navbar-menu'
 import {cn} from '../utils/cn'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
+import {faFile, faFileAlt, faMoon, faSun} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import './styles/nav.css'
 
@@ -62,6 +62,9 @@ function MobileNavbar({className}: {className?: string}) {
           <Link href='/contact' className='mobile-bar-link'>
             Contact
           </Link>
+          <Link target='_blank' href='https://drive.google.com/file/d/1cremZQd1HmPCqq3XucJLl0qw60AriqXa/view?usp=sharing' className='mobile-bar-link'>
+            Resume
+          </Link>
         </nav>
       </div>
     </div>
@@ -93,6 +96,11 @@ function Navbar({className, toggleDarkMode, darkMode}: {className?: string; togg
         </Link>
         <Link href='/contact' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
           <span aria-label='Contact'>Contact</span>
+        </Link>
+        <Link target='_blank' href='https://drive.google.com/file/d/1cremZQd1HmPCqq3XucJLl0qw60AriqXa/view?usp=sharing' className='cursor-pointer text-ui-text hover:opacity-[0.9]'>
+          <span aria-label='Resume'>
+            <FontAwesomeIcon icon={faFileAlt} size='xs' />
+          </span>
         </Link>
         <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={toggleDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
