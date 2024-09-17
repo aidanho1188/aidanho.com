@@ -7,13 +7,18 @@ export default function HeroSection({data, children, contentsRef}) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles['hero-left']}>
+        {/* <div className={styles['hero-left']}>
+          <p className={styles.quote}>{data.quote.text}</p>
+        </div> */}
+
+        {/* <div className={styles['hero-right']}>
+          <CardStack items={data.highlightProjects} />
+        </div> */}
+
+        <div className={styles.middle}>
           <p className={styles.quote}>{data.quote.text}</p>
         </div>
 
-        <div className={styles['hero-right']}>
-          <CardStack items={data.highlightProjects} />
-        </div>
         {children}
       </div>
       <ScrollIndicator contentsRef={contentsRef} />
