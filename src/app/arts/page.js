@@ -26,7 +26,7 @@ export default function Arts() {
       <div className='relative top-0 left-0 w-[100%] h-[90vh] z-0' />
 
       {/* Let make it more dynamic and use different cue for mobile and desktop */}
-      <ScrollDownIndicator contentsRef={contentsRef} color='white'  />
+      <ScrollDownIndicator contentsRef={contentsRef} color='white' />
 
       <div ref={contentsRef} className='art-content bg-background-color-wo rounded w-auto antialiased px-12 pt-4 relative m-6'>
         {dummyContent.map((item, index) => (
@@ -78,6 +78,25 @@ const dummyContent = [
     ),
     badge: 'Digital Art',
     image: '/images/arts/beach.jpg',
+    height: 500,
+    width: 500,
+  },
+  {
+    title: 'Painting About Me',
+    description: (
+      <>
+        <div>
+          {' '}
+          This painting is a painting about me which is based on a picture I taken at{' '}
+          <LinkPreview url='https://www.tripadvisor.com/Tourism-g40517-Biddeford_Pool_Maine-Vacations.html' className='text-ui-text font-bold'>
+            Biddeford Pool
+          </LinkPreview>
+          . I was able to finish this piece in one sitting which is a personal record for me.
+        </div>
+      </>
+    ),
+    badge: 'Personal Art',
+    image: '/images/arts/biddeford-pool.jpg',
     height: 500,
     width: 500,
   },
