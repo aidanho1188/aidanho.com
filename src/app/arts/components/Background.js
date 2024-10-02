@@ -1,8 +1,10 @@
 import {useRef} from 'react'
 import Trees from './Trees'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 export default function Background() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
   const resizeCanvas = () => {
     const canvas = document.getElementById('canvas')
     if (canvas) {
@@ -15,6 +17,9 @@ export default function Background() {
     const canvas = document.getElementById('ground-canvas')
     const ctx = canvas.getContext('2d')
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768) // Adjust the width as needed
+    }
     function resizeCanvas() {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -59,17 +64,29 @@ export default function Background() {
 
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
+    handleResize()
+    window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', resizeCanvas)
     }
   }, [])
 
-  return (
-    <>
-      <Trees />
-      <canvas id='canvas'></canvas>
-      <canvas id='sky-canvas'></canvas>
-      <canvas id='ground-canvas'></canvas>
-    </>
-  )
+  if (isMobile) {
+    return (
+      <>
+        {/* <canvas id='canvas'></canvas> */}
+        <canvas id='sky-canvas'></canvas>
+        <canvas id='ground-canvas'></canvas>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <Trees />
+        <canvas id='canvas'></canvas>
+        <canvas id='sky-canvas'></canvas>
+        <canvas id='ground-canvas'></canvas>
+      </>
+    )
+  }
 }

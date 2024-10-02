@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 const inter = Inter({subsets: ['latin']})
 export default function RootLayout({children}) {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(null)
 
   useEffect(() => {
     AOS.init({
@@ -26,21 +26,9 @@ export default function RootLayout({children}) {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     const handleChange = (e) => setDarkMode(e.matches)
 
-    // first load
-    let localDarkMode = ''
-    try {
-      if (localStorage.getItem('darkMode') === null) {
-        localDarkMode = mediaQuery.matches
-      } else {
-        localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
-      }
-    } catch (error) {
-      console.error('Error getting dark mode preference', error)
-    }
+    setDarkMode(mediaQuery.matches)
 
-    setDarkMode(localDarkMode)
-
-    if (localDarkMode) {
+    if (darkMode) {
       document.documentElement.classList.add('dark')
       document.documentElement.classList.remove('light')
     } else {
@@ -51,20 +39,6 @@ export default function RootLayout({children}) {
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
 
-  const toggleDarkMode = () => {
-    let localDarkMode = !darkMode
-    setDarkMode(localDarkMode)
-    localStorage.setItem('darkMode', localDarkMode)
-
-    if (localDarkMode) {
-      document.documentElement.classList.add('dark')
-      document.documentElement.classList.remove('light')
-    } else {
-      document.documentElement.classList.add('light')
-      document.documentElement.classList.remove('dark')
-    }
-  }
-
   return (
     <html lang='en' className={darkMode ? 'dark' : 'light'} suppressHydrationWarning>
       <head>
@@ -73,7 +47,7 @@ export default function RootLayout({children}) {
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <main>
-          <NavMenu toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+          <NavMenu />
           {children}
           <Footer />
         </main>

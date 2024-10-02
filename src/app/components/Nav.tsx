@@ -8,14 +8,14 @@ import {faFile, faFileAlt, faMoon, faSun} from '@fortawesome/free-solid-svg-icon
 import Link from 'next/link'
 import './styles/nav.css'
 
-export default function NavMenu({toggleDarkMode, darkMode}: {toggleDarkMode: () => void; darkMode: boolean}) {
+export default function NavMenu() {
   return (
     <div className='relative w-full flex items-center justify-center'>
       <div className='block md:hidden'>
         <MobileNavbar />
       </div>
       <div className='hidden md:block'>
-        <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <Navbar />
       </div>
     </div>
   )
@@ -75,7 +75,7 @@ function MobileNavbar({className}: {className?: string}) {
   )
 }
 
-function Navbar({className, toggleDarkMode, darkMode}: {className?: string; toggleDarkMode: () => void; darkMode: boolean}) {
+function Navbar({className}: {className?: string}) {
   const [active, setActive] = useState<string | null>(null)
 
   return (
@@ -106,10 +106,6 @@ function Navbar({className, toggleDarkMode, darkMode}: {className?: string; togg
             <FontAwesomeIcon icon={faFileAlt} size='xs' />
           </span>
         </Link>
-        <button className='px-2 rounded-full bg-transparent hover:bg-[#616467] hover:text-white transition duration-200 text-ui-text' onClick={toggleDarkMode}>
-          <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size='xs' />
-          <span className='sr-only'>{darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
-        </button>
       </Menu>
     </div>
   )
