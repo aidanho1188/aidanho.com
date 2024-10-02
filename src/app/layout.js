@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 const inter = Inter({subsets: ['latin']})
 export default function RootLayout({children}) {
-  const [darkMode, setDarkMode] = useState(null)
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     AOS.init({
@@ -23,43 +23,50 @@ export default function RootLayout({children}) {
   }, [])
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e) => setDarkMode(e.matches)
+
     // first load
     let localDarkMode = ''
     try {
       if (localStorage.getItem('darkMode') === null) {
-        localDarkMode = matchMedia('(prefers-color-scheme: dark)').matches
+        localDarkMode = mediaQuery.matches
       } else {
         localDarkMode = JSON.parse(localStorage.getItem('darkMode'))
       }
     } catch (error) {
-      throw new Error('Error getting dark mode preference')
+      console.error('Error getting dark mode preference', error)
     }
+
+    setDarkMode(localDarkMode)
+
     if (localDarkMode) {
       document.documentElement.classList.add('dark')
       document.documentElement.classList.remove('light')
     } else {
-      document.documentElement.classList.remove('dark')
       document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
     }
-    localStorage.setItem('darkMode', localDarkMode)
-    setDarkMode(localDarkMode)
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
 
   const toggleDarkMode = () => {
     let localDarkMode = !darkMode
     setDarkMode(localDarkMode)
     localStorage.setItem('darkMode', localDarkMode)
+
     if (localDarkMode) {
       document.documentElement.classList.add('dark')
       document.documentElement.classList.remove('light')
     } else {
-      document.documentElement.classList.remove('dark')
       document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
     }
   }
 
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' className={darkMode ? 'dark' : 'light'} suppressHydrationWarning>
       <head>
         <title>{metadata.title}</title>
         <meta name='description' content={metadata.description} />
