@@ -29,6 +29,10 @@ function MobileNavbar({className}: {className?: string}) {
     setNavOpen(!navOpen)
   }
 
+  const handleLinkClick = () => {
+    setNavOpen(false)
+  }
+
   return (
     <div className={cn('flex flex-col top-0 inset-x-0 w-full mx-auto z-50 border-b border-neutral-500/[0.2]', className)}>
       <div className='menu-container'>
@@ -47,22 +51,22 @@ function MobileNavbar({className}: {className?: string}) {
       </div>
       <div className={`fixed bottom-0 right-0 z-50 h-full w-full flex flex-col items-center space-y-12 bg-background-color text-ui-text ${!navOpen ? 'slide-in' : 'slide-out'}`}>
         <nav className='mobile-bar'>
-          <Link href='/home' className='mobile-bar-link'>
+          <Link href='/home' className='mobile-bar-link' onClick={handleLinkClick}>
             Home
           </Link>
-          <Link href='/about' className='mobile-bar-link'>
+          <Link href='/about' className='mobile-bar-link' onClick={handleLinkClick}>
             About
           </Link>
-          <Link href='/arts' className='mobile-bar-link'>
+          <Link href='/arts' className='mobile-bar-link' onClick={handleLinkClick}>
             Arts
           </Link>
-          <Link href='/projects' className='mobile-bar-link'>
+          <Link href='/projects' className='mobile-bar-link' onClick={handleLinkClick}>
             Projects
           </Link>
-          <Link href='/contact' className='mobile-bar-link'>
+          <Link href='/contact' className='mobile-bar-link' onClick={handleLinkClick}>
             Contact
           </Link>
-          <Link target='_blank' href='https://drive.google.com/file/d/1cremZQd1HmPCqq3XucJLl0qw60AriqXa/view?usp=sharing' className='mobile-bar-link'>
+          <Link target='_blank' href='https://drive.google.com/file/d/1cremZQd1HmPCqq3XucJLl0qw60AriqXa/view?usp=sharing' className='mobile-bar-link' onClick={handleLinkClick}>
             Resume
           </Link>
         </nav>
