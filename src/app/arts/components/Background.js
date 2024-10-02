@@ -3,7 +3,7 @@ import Trees from './Trees'
 import {useEffect, useState} from 'react'
 
 export default function Background() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [isMobile, setIsMobile] = useState()
 
   const resizeCanvas = () => {
     const canvas = document.getElementById('canvas')
@@ -18,7 +18,7 @@ export default function Background() {
     const ctx = canvas.getContext('2d')
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) // Adjust the width as needed
+      setIsMobile(window.innerWidth <= 768)
     }
     function resizeCanvas() {
       canvas.width = window.innerWidth
