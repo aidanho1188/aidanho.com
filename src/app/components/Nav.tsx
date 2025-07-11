@@ -84,7 +84,7 @@ function MobileNavbar({ className }: { className?: string }) {
           </Link>
           <Link
             target='_blank'
-            href='https://drive.google.com/file/d/1cremZQd1HmPCqq3XucJLl0qw60AriqXa/view?usp=sharing'
+            href='https://drive.google.com/file/d/1LoKjBraKnuzvGpH1lj65ubZoeTX9cjPQ/view?usp=sharing'
             className='mobile-bar-link'
             onClick={handleLinkClick}
           >
@@ -129,7 +129,7 @@ function Navbar({ className }: { className?: string }) {
         </Link>
         <Link
           target='_blank'
-          href='https://drive.google.com/file/d/17FPVKPu1609aIIaFV0fwr1MJWRed-O64/view?usp=sharing'
+          href='https://drive.google.com/file/d/1LoKjBraKnuzvGpH1lj65ubZoeTX9cjPQ/view?usp=sharing'
           className='cursor-pointer text-ui-text hover:opacity-[0.9]'
         >
           <span aria-label='Resume'>

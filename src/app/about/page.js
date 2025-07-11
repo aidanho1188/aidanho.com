@@ -80,7 +80,7 @@ const content = [
         <div>
           The Upright Education capstone project was a full-stack application built with a third-party API, Service Channel, which allowed our client to manage work orders from HomeDepot and manually update worker&apos;s status. I was selected to be the team lead for the capstone project because of my knowledge in computer science. Although I held the role of team lead for this project, I was fortunate to work with a team of leaders. Each member brought their unique leadership qualities to the
           table, contributing to our collective success. Throughout the project, we had to learn and adapt to many new tools on the fly, including the Vite framework, Shadcn, Jira, and the Service Channel API. Despite the challenges, we all excelled and leveraged these tools to our advantage. I want to give a shoutout to my teammates,{' '}
-          <LinkPreview url='https://www.linkedin.com/in/davidblumenshine' isStatic imageSrc='https://media.licdn.com/dms/image/v2/D5603AQF9k3jwrPwmlw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701922608924?e=1731542400&v=beta&t=ucB6JJzMpRwffj7lilt8C6w65qi-HkSCOQsAc5VExfs' className='text-white font-bold'>
+          <LinkPreview url='https://www.linkedin.com/in/davidblumenshine' isStatic imageSrc='https://media.licdn.com/dms/image/v2/D5603AQF9k3jwrPwmlw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701922608924?e=1752710400&v=beta&t=jNH0FabKE2P9YyDxPomcmg4JfzeKRHJteppwYt2Hub4' className='text-white font-bold'>
             David Blumenshine
           </LinkPreview>{' '}
           and{' '}
